@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Studio Diella — Tutele della genitorialità, congedi parentali, conciliazione vita-lavoro e gestione del lavoro femminile. Consulenza del lavoro a Desio e Milano.">
+<title>Genitorialità e lavoro femminile | Studio Diella — Consulente del Lavoro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bianco:#faf9f7;--bianco-puro:#ffffff;
+  --navy:#12213a;--navy-light:#1c3256;
+  --oro:#9a7b3f;--oro-light:#c4a96a;--oro-pale:#f0e8d8;
+  --grigio:#6b6b6b;--grigio-light:#e8e5e0;--grigio-mid:#c5c0b8;
+  --testo:#2a2a2a;
+  --cipria:#f5ede8;--cipria-dark:#e8d5cc;
+  --terracotta:#8c5a4a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bianco);color:var(--testo);font-family:'Outfit',sans-serif;font-weight:300;font-size:17.5px;line-height:1.78;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--bianco);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-color:var(--grigio-light);box-shadow:0 1px 20px rgba(0,0,0,.05)}
+.nav-logo{text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;border:1px solid rgba(154,123,63,.28);background:rgba(18,33,58,.05);line-height:1;flex-shrink:0;transition:border-color .25s,background .25s}
+.nav-logo:hover{border-color:rgba(154,123,63,.55);background:rgba(18,33,58,.09)}
+.nav-logo-studio{font-family:'Outfit',sans-serif;font-size:6.5px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(18,33,58,.45);line-height:1;margin-bottom:2px}
+.nav-logo-ld{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);letter-spacing:1px;line-height:1}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:1.8px;text-transform:uppercase;color:var(--grigio);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
+.nav-cta{background:var(--navy)!important;color:var(--bianco)!important;padding:9px 20px;border-radius:1px;transition:background .2s!important}
+.nav-cta:hover{background:var(--oro)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--navy);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mobile-menu{display:none;position:fixed;top:77px;left:0;right:0;background:var(--bianco);border-bottom:1px solid var(--grigio-light);padding:20px 24px 28px;z-index:190}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none}
+.mobile-menu ul li{border-bottom:1px solid var(--grigio-light)}
+.mobile-menu ul li a{display:block;padding:14px 0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);text-decoration:none;font-weight:400}
+
+/* ── HERO ── */
+.page-hero{padding:130px 60px 80px;background:var(--navy);position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+.page-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(245,237,232,.08)}
+.page-hero::after{content:'';position:absolute;bottom:-120px;left:200px;width:350px;height:350px;border-radius:50%;border:1px solid rgba(245,237,232,.05)}
+.ph-left{position:relative;z-index:1}
+.ph-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--cipria-dark);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.ph-label::before{content:'';display:block;width:22px;height:1px;background:var(--cipria-dark)}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.8vw,60px);font-weight:400;color:var(--bianco);line-height:1.1;margin-bottom:22px}
+.page-hero h1 em{font-style:italic;color:var(--cipria-dark)}
+.page-hero p{font-size:16.5px;color:rgba(255,255,255,.5);line-height:1.85}
+.ph-right{position:relative;z-index:1}
+.ph-principio{border-left:2px solid var(--cipria-dark);padding:24px 28px;background:rgba(245,237,232,.06)}
+.ph-principio p{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;font-style:italic;color:rgba(255,255,255,.75);line-height:1.5}
+.ph-principio cite{display:block;margin-top:14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);font-style:normal}
+
+/* ── INDICE ── */
+.indice-nav{background:var(--bianco-puro);border-bottom:1px solid var(--grigio-light);padding:0 60px;position:sticky;top:77px;z-index:100}
+.indice-links{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.indice-links::-webkit-scrollbar{display:none}
+.indice-links a{flex-shrink:0;padding:18px 22px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grigio);text-decoration:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.indice-links a:hover,.indice-links a.iactive{color:var(--navy);border-bottom-color:var(--terracotta)}
+
+/* ── INTRO ── */
+.intro-section{padding:80px 60px;background:var(--cipria);border-bottom:1px solid var(--cipria-dark)}
+.intro-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.intro-nota{background:var(--bianco-puro);border-left:3px solid var(--terracotta);padding:22px 26px;font-size:15px;color:var(--testo);line-height:1.75;margin-top:28px}
+.intro-nota strong{color:var(--navy);display:block;margin-bottom:6px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+
+/* ── SEZIONI TEMATICHE ── */
+.tema{padding:80px 60px;border-bottom:1px solid var(--grigio-light)}
+.tema:nth-child(even){background:var(--bianco-puro)}
+.tema:nth-child(odd){background:var(--bianco)}
+.tema-inner{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+.tema-sidebar{}
+.tema-num{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--grigio-light);line-height:1}
+.tema-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--terracotta);margin-top:8px;margin-bottom:12px;font-weight:500}
+.tema-rif{font-size:12px;color:var(--grigio-mid);line-height:1.6;margin-top:12px}
+.tema-rif strong{display:block;color:var(--grigio);margin-bottom:4px;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.tema-content{}
+.tema-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.2vw,40px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:20px}
+.tema-title em{font-style:italic;color:var(--terracotta)}
+.tema-text{font-size:16px;color:var(--grigio);line-height:1.85;margin-bottom:24px}
+.tema-text+.tema-text{margin-top:-8px}
+
+/* Schede operative */
+.schede{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--grigio-light);border:1px solid var(--grigio-light);margin-top:32px}
+.scheda{background:var(--bianco-puro);padding:28px 24px}
+.scheda-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terracotta);margin-bottom:10px;font-weight:500}
+.scheda-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:8px;line-height:1.3}
+.scheda-text{font-size:13.5px;color:var(--grigio);line-height:1.7}
+.scheda-tag{display:inline-block;margin-top:12px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--oro);background:var(--oro-pale);padding:3px 10px;border-radius:1px}
+
+/* Timeline */
+.timeline{list-style:none;margin-top:28px;border-left:2px solid var(--cipria-dark);padding-left:28px}
+.timeline li{position:relative;padding-bottom:24px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:'';position:absolute;left:-35px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--terracotta);border:2px solid var(--bianco-puro)}
+.tl-header{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.tl-periodo{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--terracotta);font-weight:500}
+.tl-title{font-size:15.5px;font-weight:500;color:var(--navy)}
+.tl-text{font-size:14px;color:var(--grigio);line-height:1.7}
+
+/* Tabella confronto */
+.confronto-table{width:100%;border-collapse:collapse;margin-top:28px;font-size:14.5px}
+.confronto-table th{background:var(--navy);color:var(--bianco);padding:12px 16px;text-align:left;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500}
+.confronto-table td{padding:12px 16px;border-bottom:1px solid var(--grigio-light);vertical-align:top;color:var(--testo);line-height:1.6}
+.confronto-table tr:last-child td{border-bottom:none}
+.confronto-table td:first-child{font-weight:500;color:var(--navy);width:220px}
+.confronto-table tr:hover td{background:#f9f7f4}
+.novita-badge{display:inline-block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;background:#e8f5e9;color:#2e7d32;padding:2px 8px;border-radius:1px;margin-left:6px;vertical-align:middle;font-weight:600}
+
+/* Box normativo */
+.norm-box{background:var(--navy);padding:28px 32px;margin-top:28px;display:flex;gap:24px;align-items:flex-start}
+.norm-box-icon{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--cipria-dark);line-height:1;flex-shrink:0}
+.norm-box-text{font-size:14px;color:rgba(255,255,255,.6);line-height:1.75}
+.norm-box-text strong{color:var(--cipria-dark);display:block;margin-bottom:6px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+
+/* Parità di genere */
+.parita{background:var(--cipria);padding:80px 60px;border-top:1px solid var(--cipria-dark);border-bottom:1px solid var(--cipria-dark)}
+.parita-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.parita-cert{background:var(--bianco-puro);border:1px solid var(--cipria-dark);padding:36px;margin-top:28px}
+.cert-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px;font-weight:500}
+.cert-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--navy);margin-bottom:12px}
+.cert-text{font-size:14px;color:var(--grigio);line-height:1.75}
+.cert-vantaggi{list-style:none;margin-top:16px;border-top:1px solid var(--cipria-dark);padding-top:16px}
+.cert-vantaggi li{font-size:13.5px;color:var(--testo);padding:8px 0;border-bottom:1px solid var(--cipria-dark);display:flex;gap:10px}
+.cert-vantaggi li::before{content:'→';color:var(--terracotta);flex-shrink:0}
+
+/* CTA finale */
+.cta-finale{background:var(--navy);padding:80px 60px;text-align:center}
+.cta-finale h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;color:var(--bianco);margin-bottom:16px}
+.cta-finale h2 em{font-style:italic;color:var(--cipria-dark)}
+.cta-finale p{font-size:16px;color:rgba(255,255,255,.5);max-width:520px;margin:0 auto 40px}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--navy);color:var(--bianco);padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background .25s;display:inline-block}
+.btn-cipria{background:var(--cipria-dark);color:var(--navy);padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .25s;display:inline-block}
+.btn-cipria:hover{background:var(--bianco)}
+.btn-outline-w{border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.6);padding:13px 28px;font-size:11px;font-weight:400;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .25s;display:inline-block}
+.btn-outline-w:hover{border-color:var(--bianco);color:var(--bianco)}
+
+/* Footer */
+.page-footer-nav{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:36px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.page-footer-nav a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.page-footer-nav a:hover{color:var(--bianco)}
+footer{background:#080c14;color:rgba(255,255,255,.28);padding:24px 60px;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:14px}
+footer a{color:rgba(255,255,255,.28);text-decoration:none}
+
+/* Watermark */
+.bg-watermark{position:fixed;inset:0;pointer-events:none;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:.055}
+.bg-wm-circle{width:min(78vw,78vh);height:min(78vw,78vh);border-radius:50%;border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bg-wm-text{font-family:'Cormorant Garamond',serif;font-size:min(46vw,46vh);font-weight:300;color:var(--navy);line-height:1;user-select:none;letter-spacing:-.02em}
+/* Reveal */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* Responsive */
+@media(max-width:960px){
+  nav{padding:18px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .page-hero{padding:110px 20px 56px;grid-template-columns:1fr}
+  .indice-nav{padding:0 20px}
+  .intro-section,.tema,.parita,.cta-finale{padding:56px 20px}
+  .intro-inner,.tema-inner,.parita-inner{grid-template-columns:1fr;gap:28px}
+  .tema-inner{grid-template-columns:1fr}
+  .schede{grid-template-columns:1fr}
+  .confronto-table td:first-child{width:auto}
+  .page-footer-nav{padding:28px 20px;flex-direction:column;align-items:flex-start;gap:12px}
+  footer{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- WATERMARK -->
+<div class="bg-watermark" aria-hidden="true"><div class="bg-wm-circle"><span class="bg-wm-text">LD</span></div></div>
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-studio">Studio</span><span class="nav-logo-ld">LD</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#studio">Lo Studio</a></li>
+    <li><a href="settori.html">Settori</a></li>
+    <li><a href="index.html#servizi">Servizi</a></li>
+    <li><a href="index.html#crisi">Crisi aziendali</a></li>
+    <li><a href="index.html#estere">Internazionale</a></li>
+    <li><a href="circolari/index.html">Circolari</a></li>
+    <li><a href="lavoro-femminile.html" class="active">Genitorialità</a></li>
+    <li><a href="index.html#contatti" class="nav-cta">Contatti</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#studio" onclick="closeMobile()">Lo Studio</a></li>
+    <li><a href="settori.html" onclick="closeMobile()">Settori</a></li>
+    <li><a href="index.html#servizi" onclick="closeMobile()">Servizi</a></li>
+    <li><a href="index.html#crisi" onclick="closeMobile()">Crisi aziendali</a></li>
+    <li><a href="index.html#estere" onclick="closeMobile()">Internazionale</a></li>
+    <li><a href="circolari/index.html" onclick="closeMobile()">Circolari</a></li>
+    <li><a href="lavoro-femminile.html" onclick="closeMobile()">Genitorialità</a></li>
+    <li><a href="index.html#contatti" onclick="closeMobile()">Contatti</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="ph-left">
+    <div class="ph-label">Tutele lavoristiche</div>
+    <h1>Genitorialità, <em>conciliazione</em><br>e lavoro femminile</h1>
+    <p>Le tutele per la maternità, la paternità e la conciliazione vita-lavoro sono un diritto del lavoratore e un obbligo del datore. Una gestione corretta protegge entrambi — e costruisce organizzazioni più solide.</p>
+  </div>
+  <div class="ph-right">
+    <div class="ph-principio">
+      <p>«La Repubblica riconosce a tutti i cittadini il diritto al lavoro e promuove le condizioni che rendano effettivo questo diritto.»</p>
+      <cite>Art. 4 Costituzione · D.Lgs. 151/2001 · D.Lgs. 105/2022</cite>
+    </div>
+  </div>
+</div>
+
+<!-- INDICE -->
+<div class="indice-nav">
+  <nav class="indice-links">
+    <a href="#maternita">Maternità</a>
+    <a href="#paternita">Paternità</a>
+    <a href="#congedo-parentale">Congedo parentale</a>
+    <a href="#conciliazione">Conciliazione</a>
+    <a href="#tutele">Tutele e divieti</a>
+    <a href="#parita">Parità di genere</a>
+  </nav>
+</div>
+
+<!-- INTRO -->
+<div class="intro-section">
+  <div class="intro-inner">
+    <div class="reveal">
+      <div style="font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px">Il contesto normativo</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:20px">Un quadro normativo <em style="font-style:italic;color:var(--terracotta)">in evoluzione</em></h2>
+      <p style="font-size:16px;color:var(--grigio);line-height:1.85">Il D.Lgs. 105/2022, attuativo della Direttiva UE 2019/1158 sull'equilibrio tra attività professionale e vita familiare, ha introdotto modifiche significative al sistema dei congedi parentali. Le novità riguardano sia i padri — con l'estensione dei diritti di paternità — sia entrambi i genitori, con nuove percentuali di indennizzazione e mesi aggiuntivi flessibili.</p>
+      <p style="font-size:16px;color:var(--grigio);line-height:1.85;margin-top:16px">Una corretta gestione di questi istituti richiede aggiornamento continuo: le scadenze, le modalità di comunicazione all'INPS e le procedure aziendali cambiano frequentemente.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="intro-nota">
+        <strong>Nota per i datori di lavoro</strong>
+        La corretta applicazione delle tutele di genitorialità non è solo un obbligo normativo: riduce il contenzioso, rafforza il clima aziendale e — in molti casi — permette di accedere alla Certificazione della Parità di Genere (UNI/PdR 125:2022), che porta vantaggi contributivi concreti.
+      </div>
+      <div class="intro-nota" style="margin-top:16px">
+        <strong>Nota per i lavoratori</strong>
+        I diritti di genitorialità sono personali e intrasmissibili nella quota spettante a ciascun genitore. Il Consulente del Lavoro è il professionista di riferimento per verificare spettanze, modalità di richiesta e impatto sulla retribuzione.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 1. MATERNITÀ ══ -->
+<section class="tema" id="maternita">
+  <div class="tema-inner">
+    <div class="tema-sidebar reveal">
+      <div class="tema-num">01</div>
+      <div class="tema-label">Congedo di maternità</div>
+      <div class="tema-rif">
+        <strong>Riferimenti normativi</strong>
+        D.Lgs. 151/2001<br>
+        Artt. 16–27<br>
+        Circ. INPS n. 41/2023
+      </div>
+    </div>
+    <div class="tema-content reveal d1">
+      <h2 class="tema-title">Maternità: tutele, <em>indennità</em> e obblighi aziendali</h2>
+      <p class="tema-text">Il congedo obbligatorio di maternità dura <strong>5 mesi</strong> (di norma 2 mesi prima e 3 dopo il parto, o 1 mese prima e 4 dopo con certificazione medica). Durante questo periodo la lavoratrice percepisce un'indennità INPS pari all'<strong>80% della retribuzione media giornaliera</strong>, anticipata dal datore di lavoro e poi conguagliata.</p>
+      <p class="tema-text">Esistono ipotesi di flessibilità: la lavoratrice può scegliere di astenersi dal lavoro soltanto 1 mese prima del parto e i restanti 4 dopo, previo certificato medico che attesti la compatibilità con le mansioni svolte.</p>
+
+      <div class="schede">
+        <div class="scheda">
+          <div class="scheda-label">Durata e decorrenza</div>
+          <div class="scheda-title">5 mesi obbligatori</div>
+          <div class="scheda-text">2 mesi anteparto + 3 mesi postparto (o 1+4 con opzione flessibile). In caso di parto prematuro o tardivo, le regole si adattano automaticamente.</div>
+          <span class="scheda-tag">Art. 16–17 D.Lgs. 151/2001</span>
+        </div>
+        <div class="scheda">
+          <div class="scheda-label">Indennità INPS</div>
+          <div class="scheda-title">80% della retribuzione</div>
+          <div class="scheda-text">Anticipata dal datore di lavoro. L'azienda la porta in deduzione sui contributi INPS. Il CCNL applicato può prevedere un'integrazione aziendale fino al 100%.</div>
+          <span class="scheda-tag">Art. 22 D.Lgs. 151/2001</span>
+        </div>
+        <div class="scheda">
+          <div class="scheda-label">Adempimenti aziendali</div>
+          <div class="scheda-title">Comunicazione e sostituzione</div>
+          <div class="scheda-text">Il datore deve comunicare l'assenza, gestire la sostituzione (con contratto a termine agevolato) e garantire la conservazione del posto al rientro nella stessa posizione o equivalente.</div>
+          <span class="scheda-tag">Art. 56 D.Lgs. 151/2001</span>
+        </div>
+      </div>
+
+      <div class="norm-box">
+        <div class="norm-box-icon">§</div>
+        <div class="norm-box-text">
+          <strong>Tutela contro il licenziamento</strong>
+          Il licenziamento della lavoratrice è nullo dall'inizio della gravidanza fino al compimento di un anno di età del figlio, salvo cause non riconducibili alla gravidanza (giusta causa). Il divieto si applica anche in caso di adozione e affidamento, dal momento dell'adozione fino a un anno dall'ingresso del minore in famiglia.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 2. PATERNITÀ ══ -->
+<section class="tema" id="paternita">
+  <div class="tema-inner">
+    <div class="tema-sidebar reveal">
+      <div class="tema-num">02</div>
+      <div class="tema-label">Congedo di paternità</div>
+      <div class="tema-rif">
+        <strong>Riferimenti normativi</strong>
+        D.Lgs. 151/2001<br>
+        Art. 27-bis (ins. L. 92/2012)<br>
+        D.Lgs. 105/2022
+      </div>
+    </div>
+    <div class="tema-content reveal d1">
+      <h2 class="tema-title">Paternità: dal diritto facoltativo <em>all'obbligo</em></h2>
+      <p class="tema-text">Il D.Lgs. 105/2022 ha stabilizzato e ampliato il congedo di paternità obbligatorio: il padre lavoratore dipendente ha diritto a <strong>10 giorni lavorativi</strong> di congedo obbligatorio, da fruire entro i 5 mesi dalla nascita. L'indennità è pari al <strong>100% della retribuzione</strong>, a carico INPS.</p>
+      <p class="tema-text">Il padre può fruire del congedo anche contemporaneamente al congedo di maternità della madre, anche in caso di morte perinatale. È possibile fruire di un ulteriore giorno facoltativo in sostituzione della madre, con consenso di quest'ultima e sua rinuncia al corrispondente periodo.</p>
+
+      <table class="confronto-table">
+        <thead>
+          <tr>
+            <th>Istituto</th>
+            <th>Durata</th>
+            <th>Indennità</th>
+            <th>Termini di fruizione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Congedo obbligatorio padre <span class="novita-badge">D.Lgs. 105/2022</span></td>
+            <td>10 giorni lavorativi</td>
+            <td>100% retribuzione (INPS)</td>
+            <td>Entro 5 mesi dalla nascita</td>
+          </tr>
+          <tr>
+            <td>Congedo facoltativo padre (in sostituz. madre)</td>
+            <td>1 giorno</td>
+            <td>100% retribuzione (INPS)</td>
+            <td>Con rinuncia della madre</td>
+          </tr>
+          <tr>
+            <td>Congedo parentale padre (v. sezione 3)</td>
+            <td>Fino a 3 mesi non trasferibili</td>
+            <td>80% (primi 3 mesi) → 30%</td>
+            <td>Entro 12 anni del figlio</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="norm-box" style="margin-top:28px">
+        <div class="norm-box-icon">!</div>
+        <div class="norm-box-text">
+          <strong>Obbligo per il datore di lavoro</strong>
+          Il datore di lavoro non può opporsi alla fruizione del congedo di paternità obbligatorio. L'Ispettorato del Lavoro svolge attività di vigilanza specifica su questo istituto. Il mancato riconoscimento è soggetto a sanzione amministrativa.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3. CONGEDO PARENTALE ══ -->
+<section class="tema" id="congedo-parentale">
+  <div class="tema-inner">
+    <div class="tema-sidebar reveal">
+      <div class="tema-num">03</div>
+      <div class="tema-label">Congedo parentale</div>
+      <div class="tema-rif">
+        <strong>Riferimenti normativi</strong>
+        D.Lgs. 151/2001<br>
+        Artt. 32–46<br>
+        D.Lgs. 105/2022<br>
+        Circ. INPS n. 45/2023
+      </div>
+    </div>
+    <div class="tema-content reveal d1">
+      <h2 class="tema-title">Congedo parentale: <em>nuove indennità</em> e mesi flessibili</h2>
+      <p class="tema-text">Il D.Lgs. 105/2022 ha riformato in profondità il congedo parentale. Ciascun genitore ha diritto a <strong>6 mesi</strong> di congedo, per un totale di <strong>10 mesi</strong> (11 se il padre fruisce di almeno 3 mesi). Il congedo può essere fruito fino al <strong>12° anno di vita</strong> del figlio (in precedenza 8°), anche in modo frazionato per ore.</p>
+
+      <ul class="timeline">
+        <li>
+          <div class="tl-header">
+            <span class="tl-periodo">Primi 3 mesi (non trasferibili)</span>
+            <span class="tl-title">Indennità all'80% <span class="novita-badge">Novità 2023→2024→2025</span></span>
+          </div>
+          <div class="tl-text">Per ciascun genitore, i primi 3 mesi di congedo — non cedibili all'altro genitore — sono indennizzati all'80% della retribuzione. La soglia è stata progressivamente ampliata dalle Leggi di Bilancio: 1 mese nel 2023, 2 mesi nel 2024, 3 mesi dal 1° gennaio 2025. Condizione: il congedo deve iniziare nell'anno di riferimento.</div>
+        </li>
+        <li>
+          <div class="tl-header">
+            <span class="tl-periodo">Mesi 4–6 (per ciascuno) + mesi condivisi</span>
+            <span class="tl-title">Indennità al 30%</span>
+          </div>
+          <div class="tl-text">Tutti i mesi di congedo parentale eccedenti i primi 3 — sia quelli spettanti individualmente (4°–6°) sia quelli condivisibili tra i genitori che portano il totale a 10 o 11 mesi — sono indennizzati al 30% della retribuzione. La ripartizione dei mesi condivisibili è scelta liberamente dalla coppia, con comunicazione preventiva al datore di lavoro e all'INPS.</div>
+        </li>
+        <li>
+          <div class="tl-header">
+            <span class="tl-periodo">Fino ai 12 anni del figlio</span>
+            <span class="tl-title">Frazionamento orario</span>
+          </div>
+          <div class="tl-text">Il congedo può essere fruito anche su base oraria, con frazionamento minimo stabilito dal CCNL o, in mancanza, dalla legge. Il datore non può rifiutarlo salvo esigenze organizzative specifiche documentate.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 4. CONCILIAZIONE VITA-LAVORO ══ -->
+<section class="tema" id="conciliazione">
+  <div class="tema-inner">
+    <div class="tema-sidebar reveal">
+      <div class="tema-num">04</div>
+      <div class="tema-label">Conciliazione vita-lavoro</div>
+      <div class="tema-rif">
+        <strong>Riferimenti normativi</strong>
+        D.Lgs. 81/2017<br>
+        L. 81/2017 (Smart working)<br>
+        D.Lgs. 105/2022<br>
+        Art. 18-bis L. 81/2017
+      </div>
+    </div>
+    <div class="tema-content reveal d1">
+      <h2 class="tema-title">Flessibilità, <em>smart working</em> e orari agevolati</h2>
+      <p class="tema-text">La conciliazione vita-lavoro non è solo un tema culturale: è un insieme di diritti specifici che il datore di lavoro è tenuto a riconoscere in via prioritaria a determinate categorie di lavoratori. La gestione corretta di questi istituti richiede accordi individuali scritti, comunicazioni al Ministero del Lavoro e verifica dei CCNL applicati.</p>
+
+      <div class="schede">
+        <div class="scheda">
+          <div class="scheda-label">Smart working prioritario</div>
+          <div class="scheda-title">Diritto di precedenza</div>
+          <div class="scheda-text">Il D.Lgs. 105/2022 riconosce la priorità nell'accesso allo smart working ai genitori con figli fino a 12 anni (o senza limite in caso di disabilità), ai caregivers e ai lavoratori con disabilità. La richiesta non può essere ignorata: il datore deve rispondere motivando l'eventuale diniego.</div>
+          <span class="scheda-tag">Art. 18-bis L. 81/2017</span>
+        </div>
+        <div class="scheda">
+          <div class="scheda-label">Part-time agevolato</div>
+          <div class="scheda-title">Trasformazione del rapporto</div>
+          <div class="scheda-text">Il lavoratore con figli fino a 13 anni o con familiare in condizione di disabilità grave (L. 104/1992) ha diritto alla trasformazione del rapporto a tempo parziale, con precedenza rispetto ai colleghi. La riduzione può essere verticale, orizzontale o mista.</div>
+          <span class="scheda-tag">Art. 8 D.Lgs. 81/2015</span>
+        </div>
+        <div class="scheda">
+          <div class="scheda-label">Permessi L. 104/1992</div>
+          <div class="scheda-title">Assistenza familiare</div>
+          <div class="scheda-text">3 giorni mensili (o 2 ore giornaliere) per l'assistenza al familiare con disabilità grave. Le regole di accesso, le condizioni di esclusività e i casi di cumulo tra più aventi diritto sono oggetto di frequente verifica ispettiva.</div>
+          <span class="scheda-tag">L. 104/1992</span>
+        </div>
+        <div class="scheda">
+          <div class="scheda-label">Riposi per allattamento</div>
+          <div class="scheda-title">Fino al primo anno del figlio</div>
+          <div class="scheda-text">2 ore giornaliere di riposo (1 ora se l'orario giornaliero è inferiore a 6 ore) retribuite al 100% a carico INPS, anticipate dal datore. Si applicano anche in caso di adozione, per il primo anno dall'ingresso in famiglia.</div>
+          <span class="scheda-tag">Artt. 39–40 D.Lgs. 151/2001</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5. TUTELE E DIVIETI ══ -->
+<section class="tema" id="tutele">
+  <div class="tema-inner">
+    <div class="tema-sidebar reveal">
+      <div class="tema-num">05</div>
+      <div class="tema-label">Tutele e divieti</div>
+      <div class="tema-rif">
+        <strong>Riferimenti normativi</strong>
+        D.Lgs. 151/2001<br>
+        Artt. 53–56<br>
+        D.Lgs. 198/2006<br>
+        (Codice pari opportunità)
+      </div>
+    </div>
+    <div class="tema-content reveal d1">
+      <h2 class="tema-title">Divieti assoluti e <em>tutele specifiche</em></h2>
+      <p class="tema-text">La normativa pone divieti precisi che il datore di lavoro non può derogare contrattualmente. La loro violazione comporta nullità degli atti e, spesso, sanzioni penali o amministrative. La verifica della corretta applicazione è uno degli ambiti più frequentemente ispezionati dall'INL (Ispettorato Nazionale del Lavoro).</p>
+
+      <table class="confronto-table">
+        <thead>
+          <tr><th>Istituto</th><th>Contenuto</th><th>Durata della tutela</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Divieto di licenziamento</td>
+            <td>Nullità del licenziamento della lavoratrice madre</td>
+            <td>Dall'inizio della gravidanza fino al 1° anno di vita del figlio</td>
+          </tr>
+          <tr>
+            <td>Divieto di lavoro notturno</td>
+            <td>Esonero automatico senza necessità di richiesta</td>
+            <td>Gravidanza · Fino a 1 anno del figlio</td>
+          </tr>
+          <tr>
+            <td>Divieto di lavori pericolosi</td>
+            <td>Mansioni incompatibili con la gravidanza</td>
+            <td>Gravidanza e puerperio · Valutazione DVR specifica</td>
+          </tr>
+          <tr>
+            <td>Diritto al rientro nella stessa posizione</td>
+            <td>Stessa mansione o equivalente al rientro dal congedo</td>
+            <td>Dopo congedo di maternità e congedo parentale</td>
+          </tr>
+          <tr>
+            <td>Divieto di discriminazione</td>
+            <td>Nessuna differenza retributiva o di trattamento per ragioni di genere, gravidanza, maternità</td>
+            <td>Permanente · D.Lgs. 198/2006</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 6. PARITÀ DI GENERE ══ -->
+<section class="parita" id="parita">
+  <div class="parita-inner">
+    <div class="reveal">
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px">Certificazione</div>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,42px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:20px">Certificazione della <em style="font-style:italic;color:var(--terracotta)">parità di genere</em></h2>
+      <p style="font-size:16px;color:var(--grigio);line-height:1.85">La UNI/PdR 125:2022 introduce la Certificazione della Parità di Genere, uno strumento volontario che misura e valorizza le politiche aziendali su parità retributiva, opportunità di crescita, tutela della genitorialità e prevenzione delle discriminazioni.</p>
+      <p style="font-size:16px;color:var(--grigio);line-height:1.85;margin-top:14px">Non è una certificazione etica generica: produce vantaggi economici e competitivi concreti, misurabili, che il Consulente del Lavoro può aiutare a strutturare e documentare.</p>
+    </div>
+    <div class="reveal d1">
+      <div class="parita-cert">
+        <div class="cert-label">UNI/PdR 125:2022</div>
+        <div class="cert-title">Vantaggi della Certificazione di Parità</div>
+        <div class="cert-text">La certificazione è rilasciata da organismi accreditati e richiede la documentazione di 6 aree: cultura inclusiva, governance, equità retributiva, opportunità di crescita, tutela della genitorialità, gestione del genere nelle relazioni esterne.</div>
+        <ul class="cert-vantaggi">
+          <li>Riduzione dei contributi INPS fino a 50.000 € annui (art. 5 L. 162/2021)</li>
+          <li>Punteggio premiante nei bandi pubblici e nelle gare d'appalto (PNRR)</li>
+          <li>Accesso agevolato ai finanziamenti SIMEST per l'internazionalizzazione</li>
+          <li>Miglioramento del rating ESG e dei rapporti con istituti di credito</li>
+          <li>Riduzione del turnover femminile e dei costi di sostituzione</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINALE -->
+<section class="cta-finale">
+  <h2 class="reveal">Hai bisogno di <em>supporto operativo</em>?</h2>
+  <p class="reveal d1">Dallo stato di gravidanza alla Certificazione di Parità, il nostro studio gestisce ogni aspetto — per datori di lavoro e lavoratori.</p>
+  <div class="cta-buttons reveal d2">
+    <a href="index.html#contatti" class="btn-cipria">Richiedi una consulenza</a>
+    <a href="index.html#circolari" class="btn-outline-w">Aggiornamenti normativi</a>
+  </div>
+</section>
+
+<!-- FOOTER NAV -->
+<div class="page-footer-nav">
+  <a href="settori.html">← Settori di specializzazione</a>
+  <a href="index.html#contatti">Contattaci →</a>
+</div>
+<footer>
+  <span>Dr. Leonardo Diella — Consulente del Lavoro · Ordine Provincia di Monza e della Brianza</span>
+  <span>© 2025 Studio Diella · <a href="#">Privacy</a></span>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+function closeMobile(){ btn.classList.remove('open'); menu.classList.remove('open'); }
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.page-hero .reveal').forEach((el,i) => setTimeout(()=>el.classList.add('visible'),180+i*130));
+
+/* Indice attivo */
+const temi = document.querySelectorAll('.tema, .parita');
+const iLinks = document.querySelectorAll('.indice-links a');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      iLinks.forEach(a => a.classList.remove('iactive'));
+      const l = document.querySelector('.indice-links a[href="#'+e.target.id+'"]');
+      if(l){ l.classList.add('iactive'); l.scrollIntoView({inline:'center',behavior:'smooth'}); }
+    }
+  });
+}, { rootMargin: '-35% 0px -55% 0px' });
+temi.forEach(s => io.observe(s));
+</script>
+</body>
+</html>

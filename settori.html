@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Studio Diella — Consulenza del lavoro specializzata per settore: edilizia, Ho.Re.Ca., commercio, metalmeccanica, terzo settore, vigilanza, moda, agricoltura, appalti.">
+<title>Settori di specializzazione | Studio Diella — Consulente del Lavoro</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bianco:#faf9f7;--bianco-puro:#ffffff;
+  --navy:#12213a;--navy-light:#1c3256;
+  --oro:#9a7b3f;--oro-light:#c4a96a;--oro-pale:#f0e8d8;
+  --grigio:#6b6b6b;--grigio-light:#e8e5e0;--grigio-mid:#c5c0b8;
+  --testo:#2a2a2a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bianco);color:var(--testo);font-family:'Outfit',sans-serif;font-weight:300;font-size:17.5px;line-height:1.78;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--bianco);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-color:var(--grigio-light);box-shadow:0 1px 20px rgba(0,0,0,.05)}
+.nav-logo{text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;border:1px solid rgba(154,123,63,.28);background:rgba(18,33,58,.05);line-height:1;flex-shrink:0;transition:border-color .25s,background .25s}
+.nav-logo:hover{border-color:rgba(154,123,63,.55);background:rgba(18,33,58,.09)}
+.nav-logo-studio{font-family:'Outfit',sans-serif;font-size:6.5px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(18,33,58,.45);line-height:1;margin-bottom:2px}
+.nav-logo-ld{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);letter-spacing:1px;line-height:1}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:1.8px;text-transform:uppercase;color:var(--grigio);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
+.nav-cta{background:var(--navy)!important;color:var(--bianco)!important;padding:9px 20px;border-radius:1px;transition:background .2s!important}
+.nav-cta:hover{background:var(--oro)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--navy);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mobile-menu{display:none;position:fixed;top:77px;left:0;right:0;background:var(--bianco);border-bottom:1px solid var(--grigio-light);padding:20px 24px 28px;z-index:190;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none}
+.mobile-menu ul li{border-bottom:1px solid var(--grigio-light)}
+.mobile-menu ul li a{display:block;padding:14px 0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);text-decoration:none;font-weight:400}
+
+/* ── HERO PAGINA ── */
+.page-hero{padding:140px 60px 80px;background:var(--navy);position:relative;overflow:hidden}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(154,123,63,.2)}
+.page-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(154,123,63,.1)}
+.page-hero-inner{position:relative;z-index:1;max-width:760px}
+.ph-label{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--oro-light);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.ph-label::before{content:'';display:block;width:22px;height:1px;background:var(--oro-light)}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,62px);font-weight:400;color:var(--bianco);line-height:1.1;margin-bottom:22px}
+.page-hero h1 em{font-style:italic;color:var(--oro-light)}
+.page-hero p{font-size:17px;color:rgba(255,255,255,.55);line-height:1.85;max-width:620px}
+
+/* ── INDICE GRUPPI ── */
+.gruppi-indice{background:var(--bianco-puro);border-bottom:1px solid var(--grigio-light);padding:0 60px;position:sticky;top:77px;z-index:100}
+.gruppi-nav{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.gruppi-nav::-webkit-scrollbar{display:none}
+.gruppi-nav a{flex-shrink:0;padding:18px 24px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--grigio);text-decoration:none;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.gruppi-nav a:hover,.gruppi-nav a.gactive{color:var(--navy);border-bottom-color:var(--oro)}
+
+/* ── SEZIONE GRUPPO ── */
+.gruppo{padding:80px 60px;border-bottom:1px solid var(--grigio-light)}
+.gruppo:nth-child(even){background:var(--bianco-puro)}
+.gruppo:nth-child(odd){background:var(--bianco)}
+.gruppo-header{display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;margin-bottom:56px}
+.gruppo-num{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:300;color:var(--grigio-light);line-height:1;margin-bottom:8px}
+.gruppo-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--oro);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.gruppo-label::before{content:'';display:block;width:18px;height:1px;background:var(--oro)}
+.gruppo-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,46px);font-weight:400;color:var(--navy);line-height:1.1;margin-bottom:16px}
+.gruppo-title em{font-style:italic;color:var(--oro)}
+.gruppo-intro{font-size:16px;color:var(--grigio);line-height:1.85}
+
+/* ── SETTORI CARD GRID ── */
+.settori-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--grigio-light);border:1px solid var(--grigio-light)}
+.settore-card{background:var(--bianco-puro);padding:36px 30px;transition:background .2s}
+.settore-card:hover{background:#f4f1ec}
+.sc-icon{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--oro);margin-bottom:18px;font-weight:500;display:flex;align-items:center;gap:10px}
+.sc-icon::before{content:'';display:block;width:20px;height:1px;background:var(--oro)}
+.sc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--navy);margin-bottom:12px;line-height:1.25}
+.sc-text{font-size:14.5px;color:var(--grigio);line-height:1.75;margin-bottom:16px}
+.sc-tags{display:flex;flex-wrap:wrap;gap:6px}
+.sc-tag{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;background:var(--oro-pale);color:var(--oro);border-radius:1px;font-weight:500}
+.sc-tag.alert{background:#fff3e0;color:#bf6000}
+
+/* ── CRITICITÀ BOX ── */
+.criticita-box{background:var(--navy);padding:32px 36px;margin-top:32px;grid-column:1/-1}
+.criticita-box h4{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--bianco);margin-bottom:16px}
+.criticita-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0;list-style:none}
+.criticita-list li{font-size:13.5px;color:rgba(255,255,255,.6);padding:10px 16px 10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;gap:10px;line-height:1.5}
+.criticita-list li::before{content:'→';color:var(--oro-light);flex-shrink:0}
+
+/* ── CTA SEZIONE ── */
+.gruppo-cta{margin-top:36px;display:flex;align-items:center;gap:20px}
+.btn-primary{background:var(--navy);color:var(--bianco);padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background .25s;display:inline-block}
+.btn-primary:hover{background:var(--oro)}
+.btn-outline{border:1px solid var(--navy);color:var(--navy);padding:13px 28px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .25s;display:inline-block}
+.btn-outline:hover{background:var(--navy);color:var(--bianco)}
+
+/* ── FOOTER PAGINA ── */
+.page-footer-nav{background:var(--navy);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.page-footer-nav a{color:rgba(255,255,255,.45);text-decoration:none;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.page-footer-nav a:hover{color:var(--bianco)}
+footer{background:#080c14;color:rgba(255,255,255,.28);padding:28px 60px;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:14px}
+footer a{color:rgba(255,255,255,.28);text-decoration:none}
+
+/* ── WATERMARK ── */
+.bg-watermark{position:fixed;inset:0;pointer-events:none;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:.055}
+.bg-wm-circle{width:min(78vw,78vh);height:min(78vw,78vh);border-radius:50%;border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bg-wm-text{font-family:'Cormorant Garamond',serif;font-size:min(46vw,46vh);font-weight:300;color:var(--navy);line-height:1;user-select:none;letter-spacing:-.02em}
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:18px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .page-hero{padding:110px 20px 56px}
+  .gruppi-indice{padding:0 20px}
+  .gruppo{padding:56px 20px}
+  .gruppo-header{grid-template-columns:1fr;gap:24px}
+  .gruppo-num{font-size:56px}
+  .settori-grid{grid-template-columns:1fr}
+  .criticita-list{grid-template-columns:1fr}
+  .page-footer-nav{padding:36px 20px;flex-direction:column;align-items:flex-start;gap:14px}
+  footer{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<!-- WATERMARK -->
+<div class="bg-watermark" aria-hidden="true"><div class="bg-wm-circle"><span class="bg-wm-text">LD</span></div></div>
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-studio">Studio</span><span class="nav-logo-ld">LD</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#studio">Lo Studio</a></li>
+    <li><a href="settori.html" class="active">Settori</a></li>
+    <li><a href="index.html#servizi">Servizi</a></li>
+    <li><a href="index.html#crisi">Crisi aziendali</a></li>
+    <li><a href="index.html#estere">Internazionale</a></li>
+    <li><a href="circolari/index.html">Circolari</a></li>
+    <li><a href="lavoro-femminile.html">Genitorialità</a></li>
+    <li><a href="index.html#contatti" class="nav-cta">Contatti</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="index.html#studio" onclick="closeMobile()">Lo Studio</a></li>
+    <li><a href="settori.html" onclick="closeMobile()">Settori</a></li>
+    <li><a href="index.html#servizi" onclick="closeMobile()">Servizi</a></li>
+    <li><a href="index.html#crisi" onclick="closeMobile()">Crisi aziendali</a></li>
+    <li><a href="index.html#estere" onclick="closeMobile()">Internazionale</a></li>
+    <li><a href="circolari/index.html" onclick="closeMobile()">Circolari</a></li>
+    <li><a href="lavoro-femminile.html" onclick="closeMobile()">Genitorialità</a></li>
+    <li><a href="index.html#contatti" onclick="closeMobile()">Contatti</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="ph-label">Competenza settoriale</div>
+    <h1>Specializzazione per <em>settore</em> e filiera produttiva</h1>
+    <p>Ogni settore ha il suo CCNL, le sue specificità operative, le sue criticità tipiche. La consulenza del lavoro non è generica — è efficace quando conosce il contesto in cui l'impresa opera.</p>
+  </div>
+</div>
+
+<!-- INDICE NAVIGAZIONE GRUPPI -->
+<div class="gruppi-indice">
+  <nav class="gruppi-nav">
+    <a href="#industria">Industria e manifattura</a>
+    <a href="#costruzioni">Costruzioni e territorio</a>
+    <a href="#servizi">Servizi e sicurezza</a>
+    <a href="#economia-sociale">Economia sociale</a>
+    <a href="#filiere">Filiere e strutture complesse</a>
+  </nav>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     GRUPPO 1 — INDUSTRIA E MANIFATTURA
+     Metalmeccanica · Alimentare · Moda e tessile
+════════════════════════════════════════════════ -->
+<section class="gruppo" id="industria">
+  <div class="gruppo-header">
+    <div>
+      <div class="gruppo-num">01</div>
+    </div>
+    <div class="reveal">
+      <div class="gruppo-label">Industria e manifattura</div>
+      <h2 class="gruppo-title">Produzione, <em>turni</em> e relazioni industriali</h2>
+      <p class="gruppo-intro">I settori produttivi condividono complessità tipiche: turni, straordinari, sicurezza sul lavoro, gestione degli RSA/RSU, relazioni sindacali strutturate. Una gestione corretta richiede conoscenza approfondita del CCNL applicato e dei meccanismi di contrattazione integrativa.</p>
+    </div>
+  </div>
+
+  <div class="settori-grid">
+    <div class="settore-card reveal">
+      <div class="sc-icon">Metalmeccanica</div>
+      <div class="sc-title">Industria metalmeccanica e impiantistica</div>
+      <div class="sc-text">Settore ad alta sindacalizzazione con contrattazione integrativa aziendale e territoriale. Gestione di turni su tre fasi, straordinari, maggiorazioni, permessi ROL, banche ore. Applicazione CCNL Metalmeccanici Industria (FIM-FIOM-UILM) e Artigianato.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL FIM-FIOM-UILM</span>
+        <span class="sc-tag">Turni e ROL</span>
+        <span class="sc-tag">Contrattazione integrativa</span>
+        <span class="sc-tag">RSU aziendale</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d1">
+      <div class="sc-icon">Alimentare</div>
+      <div class="sc-title">Industria alimentare e della trasformazione</div>
+      <div class="sc-text">Cicli produttivi continuativi, stagionalità della produzione, lavoratori stranieri, sicurezza alimentare e HACCP con riflessi sul rapporto di lavoro. CCNL Alimentari Industria (FAI-FLAI-UILA) con specificità per conserve, lattiero-caseario, panificazione.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL Alimentari</span>
+        <span class="sc-tag">Cicli continuativi</span>
+        <span class="sc-tag">Stagionalità</span>
+        <span class="sc-tag alert">Sicurezza HACCP</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d2">
+      <div class="sc-icon">Moda e tessile</div>
+      <div class="sc-title">Moda, tessile e abbigliamento</div>
+      <div class="sc-text">Settore con forte componente stagionale, lavorazioni in appalto e subfornitura, lavoro a domicilio. Gestione dei picchi produttivi per le stagioni moda, contratti a termine, lavoratori intermittenti. CCNL Tessile-Abbigliamento-Moda (TAM).</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL TAM</span>
+        <span class="sc-tag">Stagionalità</span>
+        <span class="sc-tag">Subfornitura</span>
+        <span class="sc-tag">Lavoro intermittente</span>
+      </div>
+    </div>
+
+    <div class="criticita-box">
+      <h4>Criticità tipiche del comparto industriale</h4>
+      <ul class="criticita-list">
+        <li>Corretta gestione dei turni e delle maggiorazioni</li>
+        <li>Calcolo e liquidazione del ROL e delle banche ore</li>
+        <li>Contrattazione integrativa aziendale — procedure e adempimenti</li>
+        <li>Gestione delle RSU e obblighi informativi sindacali</li>
+        <li>Trasferte, rimborsi e indennità di cantiere o trasferta</li>
+        <li>Sicurezza sul lavoro — DVR, RSPP, formazione obbligatoria</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gruppo-cta reveal">
+    <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza</a>
+    <a href="index.html#analisi" class="btn-outline">Analisi compliance</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GRUPPO 2 — COSTRUZIONI E TERRITORIO
+     Edilizia · Lavoro agricolo
+════════════════════════════════════════════════ -->
+<section class="gruppo" id="costruzioni">
+  <div class="gruppo-header">
+    <div>
+      <div class="gruppo-num">02</div>
+    </div>
+    <div class="reveal">
+      <div class="gruppo-label">Costruzioni e territorio</div>
+      <h2 class="gruppo-title">Cantieri, <em>Cassa Edile</em> e lavoro stagionale</h2>
+      <p class="gruppo-intro">Due settori caratterizzati da normative specifiche, enti bilaterali obbligatori e forte componente di lavoro esterno. L'edilizia richiede una gestione puntuale degli adempimenti verso la Cassa Edile, la congruità dell'incidenza della manodopera e il governo delle filiere di appalto. Il lavoro agricolo porta con sé la stagionalità, la gestione dei braccianti e le specificità previdenziali INPS.</p>
+    </div>
+  </div>
+
+  <div class="settori-grid">
+    <div class="settore-card reveal">
+      <div class="sc-icon">Edilizia</div>
+      <div class="sc-title">Edilizia, costruzioni e affini</div>
+      <div class="sc-text">Gestione degli adempimenti verso la Cassa Edile (Edilcassa): iscrizioni, versamenti, denunce mensili, recupero contributi. Verifica della congruità dell'incidenza della manodopera nei cantieri pubblici e privati ex D.M. 25 giugno 2021. Applicazione CCNL Edilizia Industria e Artigianato (FENEAL-FILCA-FILLEA). Gestione dei cantieri mobili e della sicurezza specifica.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL Edilizia</span>
+        <span class="sc-tag">Cassa Edile</span>
+        <span class="sc-tag alert">Congruità manodopera</span>
+        <span class="sc-tag">Cantieri pubblici</span>
+        <span class="sc-tag">Sicurezza cantieri</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d1">
+      <div class="sc-icon">Agricoltura</div>
+      <div class="sc-title">Lavoro agricolo e agro-alimentare</div>
+      <div class="sc-text">Disciplina previdenziale specifica per OTD (operai a tempo determinato) e OTI (operai a tempo indeterminato). Gestione della stagionalità, dei flussi di lavoratori stranieri, dei permessi di soggiorno e del collocamento agricolo. CCNL Agricoltura con contratti provinciali. Adempimenti INPS specifici per il settore primario.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL Agricoltura</span>
+        <span class="sc-tag">OTD / OTI</span>
+        <span class="sc-tag">Stagionali</span>
+        <span class="sc-tag">Lavoratori stranieri</span>
+        <span class="sc-tag">INPS Agricoltura</span>
+      </div>
+    </div>
+
+    <div class="criticita-box">
+      <h4>Criticità tipiche di costruzioni e territorio</h4>
+      <ul class="criticita-list">
+        <li>Verifica e certificazione della congruità nei cantieri pubblici</li>
+        <li>Gestione della Cassa Edile: iscrizioni, versamenti, recupero ANF</li>
+        <li>Distacco e trasferimento di lavoratori tra cantieri</li>
+        <li>Gestione dei lavoratori stagionali agricoli extra-UE</li>
+        <li>Comunicazioni obbligatorie al Centro per l'Impiego</li>
+        <li>Accesso agli ammortizzatori specifici: CIG Edilizia, FSBA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gruppo-cta reveal">
+    <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GRUPPO 3 — SERVIZI, COMMERCIO E SICUREZZA
+     Ho.Re.Ca. · Commercio · Vigilanza
+════════════════════════════════════════════════ -->
+<section class="gruppo" id="servizi">
+  <div class="gruppo-header">
+    <div>
+      <div class="gruppo-num">03</div>
+    </div>
+    <div class="reveal">
+      <div class="gruppo-label">Servizi, commercio e sicurezza</div>
+      <h2 class="gruppo-title">Orari flessibili, <em>alta rotazione</em> e presidio H24</h2>
+      <p class="gruppo-intro">Settori caratterizzati da orari atipici, forte ricorso al part-time e al lavoro supplementare, alta rotazione del personale e gestione di lavoratori con contratti differenziati. La vigilanza aggiunge la complessità della licenza prefettizia e delle guardie giurate. Il commercio e l'HoReCa richiedono una gestione attenta delle festività, dei riposi compensativi e delle aperture domenicali.</p>
+    </div>
+  </div>
+
+  <div class="settori-grid">
+    <div class="settore-card reveal">
+      <div class="sc-icon">Ho.Re.Ca.</div>
+      <div class="sc-title">Alberghi, ristoranti e pubblici esercizi</div>
+      <div class="sc-text">Settore di punta dello Studio. Gestione di contratti stagionali, lavoratori extra, part-time verticale e orizzontale, indennità di vitto e alloggio. Applicazione del CCNL Turismo (FIPE, Federalberghi, Confesercenti). Assistenza nelle aperture domenicali e festive, nei lavori notturni e nella gestione dei fine settimana.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL Turismo</span>
+        <span class="sc-tag">Stagionali</span>
+        <span class="sc-tag">Lavoratori extra</span>
+        <span class="sc-tag">Part-time</span>
+        <span class="sc-tag">Festività</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d1">
+      <div class="sc-icon">Commercio</div>
+      <div class="sc-title">Commercio, GDO e distribuzione</div>
+      <div class="sc-text">Gestione degli orari articolati nella GDO, aperture serali e domenicali, lavoro a chiamata. CCNL Commercio (Confcommercio e Confesercenti) con contrattazione integrativa territoriale. Gestione dei dipendenti con orari variabili, delle commesse e dei turnisti nei punti vendita.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL Commercio</span>
+        <span class="sc-tag">Orari articolati</span>
+        <span class="sc-tag">GDO</span>
+        <span class="sc-tag">Lavoro domenicale</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d2">
+      <div class="sc-icon">Vigilanza</div>
+      <div class="sc-title">Vigilanza armata e non armata</div>
+      <div class="sc-text">Settore altamente regolamentato con licenza prefettizia e obbligo di iscrizione all'Albo. CCNL Vigilanza privata (ASSIV, Federlavoro). Gestione delle guardie particolari giurate (GPG), delle guardie non armate e degli addetti ai servizi di portierato. Turni H24, pronto intervento e servizi fiduciari con normativa specifica.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">CCNL Vigilanza</span>
+        <span class="sc-tag">GPG — Guardie giurate</span>
+        <span class="sc-tag">Portierato</span>
+        <span class="sc-tag alert">Licenza prefettizia</span>
+        <span class="sc-tag">Turni H24</span>
+      </div>
+    </div>
+
+    <div class="criticita-box">
+      <h4>Criticità tipiche di servizi, commercio e sicurezza</h4>
+      <ul class="criticita-list">
+        <li>Corretta gestione del lavoro domenicale e festivo — maggiorazioni e riposi compensativi</li>
+        <li>Part-time e clausole elastiche — rispetto dei vincoli procedurali</li>
+        <li>Lavoro a chiamata (intermittente) — garanzia di disponibilità e indennizzo</li>
+        <li>Turni notturni e H24 — limiti orari, sorveglianza sanitaria, maggiorazioni</li>
+        <li>Alta rotazione — gestione efficiente delle cessazioni e nuove assunzioni</li>
+        <li>Aperture domenicali — impatto su organici e costo del lavoro</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gruppo-cta reveal">
+    <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GRUPPO 4 — ECONOMIA SOCIALE
+     Cooperative · Terzo settore · Non profit
+════════════════════════════════════════════════ -->
+<section class="gruppo" id="economia-sociale">
+  <div class="gruppo-header">
+    <div>
+      <div class="gruppo-num">04</div>
+    </div>
+    <div class="reveal">
+      <div class="gruppo-label">Economia sociale</div>
+      <h2 class="gruppo-title">Cooperative, <em>terzo settore</em> e non profit</h2>
+      <p class="gruppo-intro">Enti con una doppia natura — imprenditoriale e solidaristica — che richiede una gestione del personale attenta alle peculiarità giuridiche: il rapporto socio-lavoratore nelle cooperative, la Riforma del Terzo Settore (D.Lgs. 117/2017), i volontari e il personale retribuito. Un errore nella qualificazione dei rapporti di lavoro può avere conseguenze contributive significative.</p>
+    </div>
+  </div>
+
+  <div class="settori-grid">
+    <div class="settore-card reveal">
+      <div class="sc-icon">Cooperative</div>
+      <div class="sc-title">Cooperative di lavoro e di produzione</div>
+      <div class="sc-text">Il socio-lavoratore di cooperativa ha un doppio rapporto: associativo e lavorativo. Gestione del regolamento interno ex L. 142/2001, dei ristorni, del rapporto con il Fondo Mutualistico. CCNL Cooperative di varia tipologia (Legacoop, Confcooperative, AGCI). Applicazione corretta degli ammortizzatori sociali nelle cooperative.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">L. 142/2001</span>
+        <span class="sc-tag">Socio-lavoratore</span>
+        <span class="sc-tag">Ristorni</span>
+        <span class="sc-tag">CCNL Cooperative</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d1">
+      <div class="sc-icon">Terzo settore</div>
+      <div class="sc-title">Associazioni, fondazioni e ONLUS</div>
+      <div class="sc-text">Riforma del Terzo Settore (D.Lgs. 117/2017) con impatti sulla qualificazione dei rapporti di lavoro volontario e retribuito. Distinzione tra volontari, co.co.co. e lavoratori dipendenti. Agevolazioni contributive per le ODV e le APS. Gestione delle erogazioni liberali e dei rimborsi spese.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">D.Lgs. 117/2017</span>
+        <span class="sc-tag">Volontari e dipendenti</span>
+        <span class="sc-tag">ODV / APS</span>
+        <span class="sc-tag">Agevolazioni contributive</span>
+      </div>
+    </div>
+
+    <div class="criticita-box">
+      <h4>Criticità tipiche dell'economia sociale</h4>
+      <ul class="criticita-list">
+        <li>Qualificazione corretta del rapporto socio-lavoratore</li>
+        <li>Redazione e aggiornamento del regolamento interno cooperativo</li>
+        <li>Distinzione volontari/dipendenti nelle ODV e APS</li>
+        <li>Accesso agli ammortizzatori sociali nelle cooperative (FSBA, FIS)</li>
+        <li>Gestione dei rimborsi spese ai volontari — limiti e documentazione</li>
+        <li>Agevolazioni INPS per ETS e organizzazioni non profit</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gruppo-cta reveal">
+    <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     GRUPPO 5 — FILIERE E STRUTTURE COMPLESSE
+     Appalti · Subappalti · Distacchi · Congruità
+════════════════════════════════════════════════ -->
+<section class="gruppo" id="filiere">
+  <div class="gruppo-header">
+    <div>
+      <div class="gruppo-num">05</div>
+    </div>
+    <div class="reveal">
+      <div class="gruppo-label">Filiere e strutture complesse</div>
+      <h2 class="gruppo-title">Appalti, <em>subappalti</em> e distacchi transnazionali</h2>
+      <p class="gruppo-intro">Le filiere produttive e i contratti di appalto generano responsabilità solidali tra committente e appaltatore. La normativa è in continua evoluzione e le verifiche ispettive sono frequenti. Il distacco del personale — nazionale e internazionale — richiede una gestione tecnica precisa. L'errore in questi contesti non è mai formale: ha conseguenze economiche dirette per il committente.</p>
+    </div>
+  </div>
+
+  <div class="settori-grid">
+    <div class="settore-card reveal">
+      <div class="sc-icon">Appalti e subappalti</div>
+      <div class="sc-title">Gestione delle filiere di appalto</div>
+      <div class="sc-text">Verifica del CCNL applicato dall'appaltatore e dei trattamenti economici garantiti. Responsabilità solidale del committente ex art. 29 D.Lgs. 276/2003. Clausole sociali nei cambi di appalto. DURC obbligatorio e controllo del regolare assolvimento degli obblighi previdenziali lungo tutta la filiera.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">Art. 29 D.Lgs. 276/2003</span>
+        <span class="sc-tag alert">Responsabilità solidale</span>
+        <span class="sc-tag">DURC</span>
+        <span class="sc-tag">Clausole sociali</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d1">
+      <div class="sc-icon">Congruità edilizia</div>
+      <div class="sc-title">Congruità dell'incidenza della manodopera</div>
+      <div class="sc-text">Verifica e certificazione della congruità ex D.M. 25 giugno 2021 nei cantieri privati (da gennaio 2023) e pubblici. Attestazione attraverso il portale CNL della Cassa Edile. Supporto nella regolarizzazione delle posizioni non conformi e nella gestione delle eventuali contestazioni.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">D.M. 25/06/2021</span>
+        <span class="sc-tag alert">Obbligo dal 2023</span>
+        <span class="sc-tag">CNL — Cassa Edile</span>
+        <span class="sc-tag">Cantieri privati</span>
+      </div>
+    </div>
+
+    <div class="settore-card reveal d2">
+      <div class="sc-icon">Distacchi del personale</div>
+      <div class="sc-title">Distacco nazionale e transnazionale</div>
+      <div class="sc-text">Distacco di lavoratori tra imprese del gruppo o verso terzi — verifica dei requisiti di genuinità (interesse del distaccante, temporaneità). Distacchi transnazionali di lavoratori UE ed extra-UE in Italia: obblighi di comunicazione preventiva al Min. Lavoro, applicazione del trattamento minimo garantito e iscrizione al portale ClicLavoro.</div>
+      <div class="sc-tags">
+        <span class="sc-tag">Art. 30 D.Lgs. 276/2003</span>
+        <span class="sc-tag">Distacco UE — Dir. 96/71</span>
+        <span class="sc-tag alert">Comunicazione preventiva</span>
+        <span class="sc-tag">Trattamento minimo</span>
+      </div>
+    </div>
+
+    <div class="criticita-box">
+      <h4>Criticità tipiche di filiere e strutture complesse</h4>
+      <ul class="criticita-list">
+        <li>Verifica del CCNL applicato dall'appaltatore — equiparazione salariale</li>
+        <li>Responsabilità solidale del committente — perimetro e difesa</li>
+        <li>DURC e DURC di congruità — controlli e sanatoria</li>
+        <li>Distacco genuino vs. somministrazione irregolare — distinzione operativa</li>
+        <li>Comunicazioni obbligatorie per distacchi transnazionali</li>
+        <li>Cambio di appalto — applicazione delle clausole sociali e passaggio dei lavoratori</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gruppo-cta reveal">
+    <a href="index.html#contatti" class="btn-primary">Richiedi una consulenza</a>
+    <a href="index.html#crisi" class="btn-outline">Operazioni societarie complesse</a>
+  </div>
+</section>
+
+<!-- FOOTER NAV -->
+<div class="page-footer-nav">
+  <a href="index.html">← Torna alla homepage</a>
+  <a href="lavoro-femminile.html">Genitorialità e lavoro femminile →</a>
+</div>
+<footer>
+  <span>Dr. Leonardo Diella — Consulente del Lavoro · Ordine Provincia di Monza e della Brianza</span>
+  <span>© 2025 Studio Diella · <a href="#">Privacy</a></span>
+</footer>
+
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => { btn.classList.toggle('open'); menu.classList.toggle('open'); });
+function closeMobile(){ btn.classList.remove('open'); menu.classList.remove('open'); }
+
+/* Reveal */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* Nav gruppi attivo */
+const sections = document.querySelectorAll('.gruppo');
+const navLinks = document.querySelectorAll('.gruppi-nav a');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      navLinks.forEach(a => a.classList.remove('gactive'));
+      const link = document.querySelector('.gruppi-nav a[href="#'+e.target.id+'"]');
+      if(link) link.classList.add('gactive');
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+sections.forEach(s => io.observe(s));
+</script>
+</body>
+</html>

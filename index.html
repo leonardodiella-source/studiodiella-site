@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Studio Diella — Consulente del Lavoro a Desio e Milano. Gestione del personale, contrattualistica, welfare aziendale e compliance per PMI e gruppi esteri.">
+<meta property="og:title" content="Studio Diella | Consulente del Lavoro">
+<meta property="og:description" content="Gestione strutturata del personale per imprese italiane e gruppi esteri. Sedi a Desio (MB) e Milano.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.studiodiella.it/">
+<title>Studio Diella | Consulente del Lavoro — Desio · Milano</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bianco:#faf9f7;--bianco-puro:#ffffff;--nero:#0d0d0d;
+  --navy:#12213a;--navy-light:#1c3256;
+  --oro:#9a7b3f;--oro-light:#c4a96a;--oro-pale:#f0e8d8;
+  --grigio:#6b6b6b;--grigio-light:#e8e5e0;--grigio-mid:#c5c0b8;
+  --testo:#2a2a2a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bianco);color:var(--testo);font-family:'Outfit',sans-serif;font-weight:300;font-size:17.5px;line-height:1.78;overflow-x:hidden}
+
+/* ── NAV ─────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:var(--bianco);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+nav.scrolled{border-color:var(--grigio-light);box-shadow:0 1px 20px rgba(0,0,0,.05)}
+.nav-logo{text-decoration:none;display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;border:1px solid rgba(154,123,63,.28);background:rgba(18,33,58,.05);line-height:1;flex-shrink:0;transition:border-color .25s,background .25s}
+.nav-logo:hover{border-color:rgba(154,123,63,.55);background:rgba(18,33,58,.09)}
+.nav-logo-studio{font-family:'Outfit',sans-serif;font-size:6.5px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:rgba(18,33,58,.45);line-height:1;margin-bottom:2px}
+.nav-logo-ld{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);letter-spacing:1px;line-height:1}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:1.8px;text-transform:uppercase;color:var(--grigio);text-decoration:none;transition:color .2s,border-color .2s;border-bottom:2px solid transparent;padding-bottom:4px}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a.active{color:var(--navy);border-bottom-color:var(--oro);font-weight:500}
+.nav-cta{background:var(--navy)!important;color:var(--bianco)!important;padding:9px 20px;border-radius:1px;transition:background .2s!important;letter-spacing:1.2px!important}
+.nav-cta:hover{background:var(--oro)!important}
+
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--navy);transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mobile-menu{display:none;position:fixed;top:77px;left:0;right:0;background:var(--bianco);border-bottom:1px solid var(--grigio-light);padding:20px 24px 28px;z-index:190;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none}
+.mobile-menu ul li{border-bottom:1px solid var(--grigio-light)}
+.mobile-menu ul li a{display:block;padding:14px 0;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);text-decoration:none;font-weight:400}
+
+/* ── HERO ─────────────────────────────────────────── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:77px}
+.hero-left{padding:100px 60px 80px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-left::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:var(--grigio-light)}
+.hero-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--oro);margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.hero-label::before{content:'';display:block;width:28px;height:1px;background:var(--oro)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5.2vw,68px);font-weight:400;line-height:1.08;color:var(--navy);margin-bottom:24px;letter-spacing:-.5px}
+.hero h1 em{font-style:italic;color:var(--oro)}
+.hero-sub{font-size:17px;font-weight:300;color:var(--grigio);max-width:440px;margin-bottom:12px;line-height:1.85}
+.hero-ordine{font-size:11px;letter-spacing:1.5px;color:var(--grigio-mid);text-transform:uppercase;margin-bottom:48px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--navy);color:var(--bianco);padding:14px 30px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:background .25s}
+.btn-primary:hover{background:var(--oro)}
+.btn-secondary{border:1px solid var(--navy);color:var(--navy);padding:14px 30px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .25s}
+.btn-secondary:hover{background:var(--navy);color:var(--bianco)}
+.hero-right{display:flex;flex-direction:column;justify-content:flex-end;padding:80px 60px;position:relative;overflow:hidden;background:linear-gradient(rgba(18,33,58,.55),rgba(18,33,58,.7)),url('https://cdn.prod.website-files.com/64a16dfb2fbb1442a9fdf4fd/64b537c79df1d604618c8393_IMG_20230716_181259.jpg') center/cover no-repeat}
+
+/* ── NUMERI STUDIO ─────────────────────────────────── */
+.numeri{background:var(--navy);border-top:1px solid rgba(255,255,255,.05)}
+.numeri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.num-item{padding:48px 36px;border-right:1px solid rgba(255,255,255,.07);text-align:center}
+.num-item:last-child{border-right:none}
+.num-val{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;color:var(--oro-light);line-height:1;margin-bottom:10px}
+.num-label{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.42);font-weight:400}
+
+/* ── CREDIBILITÀ ───────────────────────────────────── */
+.credibility{background:var(--bianco-puro);border-top:1px solid var(--grigio-light);border-bottom:1px solid var(--grigio-light)}
+.cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--grigio-light)}
+.cred-item{padding:48px 40px;border-right:1px solid var(--grigio-light)}
+.cred-item:last-child{border-right:none}
+.cred-icon{width:36px;height:1px;background:var(--oro);margin-bottom:28px}
+.cred-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--navy);margin-bottom:12px;line-height:1.3}
+.cred-text{font-size:14.5px;color:var(--grigio);line-height:1.85;font-weight:300}
+
+/* ── SEZIONI GENERALI ──────────────────────────────── */
+section{padding:96px 60px}
+.s-label{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--oro);margin-bottom:18px;display:flex;align-items:center;gap:12px;font-weight:400}
+.s-label::before{content:'';display:block;width:28px;height:1px;background:var(--oro)}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3.6vw,46px);font-weight:400;color:var(--navy);line-height:1.15;margin-bottom:24px}
+.s-title em{font-style:italic;color:var(--oro)}
+.s-text{font-size:16px;color:var(--grigio);line-height:1.85;max-width:600px}
+
+/* ── LO STUDIO ─────────────────────────────────────── */
+.lo-studio{background:var(--bianco-puro)}
+.studio-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.studio-valori{list-style:none;margin-top:32px;border-top:1px solid var(--grigio-light)}
+.studio-valori li{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid var(--grigio-light);font-size:15px;color:var(--testo);line-height:1.6}
+.studio-valori li strong{color:var(--navy);font-weight:500;min-width:160px;flex-shrink:0}
+.studio-ordine-box{background:var(--oro-pale);border-left:3px solid var(--oro);padding:24px 28px;margin-top:28px}
+.studio-ordine-box p{font-size:13px;color:var(--testo);line-height:1.8}
+.studio-ordine-box strong{color:var(--navy);font-weight:500}
+
+/* ── SERVIZI ───────────────────────────────────────── */
+.servizi{background:var(--bianco)}
+.servizi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--grigio-light);margin-top:56px;border:1px solid var(--grigio-light);align-items:start}
+.servizio-card{background:var(--bianco);padding:36px 24px;cursor:pointer;transition:background .35s,box-shadow .35s;display:flex;flex-direction:column}
+.servizio-card:hover{background:var(--navy);box-shadow:0 12px 40px rgba(0,0,0,.18)}
+.serv-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3;transition:color .35s}
+.serv-text{font-size:13.5px;font-weight:300;color:var(--grigio);line-height:1.75;transition:color .35s}
+.servizio-card:hover .serv-title{color:var(--bianco)}
+.servizio-card:hover .serv-text{color:rgba(255,255,255,.45)}
+/* expand on hover */
+.serv-expand{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.servizio-card:hover .serv-expand{max-height:260px}
+.serv-bullets{list-style:none;margin-top:14px;border-top:1px solid rgba(255,255,255,.1);padding-top:12px}
+.serv-bullets li{font-size:12px;color:rgba(255,255,255,.65);padding:4px 0;display:flex;gap:8px;line-height:1.5;font-weight:300}
+.serv-bullets li::before{content:'→';color:var(--oro-light);flex-shrink:0}
+.serv-cta{margin-top:18px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--oro);font-weight:500;transition:color .35s,letter-spacing .2s}
+.servizio-card:hover .serv-cta{color:var(--oro-light);letter-spacing:2.8px}
+
+/* ── MODAL AREE DI INTERVENTO ───────────────────────── */
+.area-overlay{display:none;position:fixed;inset:0;background:rgba(10,16,28,.72);z-index:500;backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:24px}
+.area-overlay.open{display:flex}
+.area-modal{background:var(--bianco-puro);max-width:780px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.28)}
+.area-close{position:sticky;top:0;float:right;margin:20px 20px 0 0;background:none;border:none;font-size:28px;line-height:1;cursor:pointer;color:var(--grigio-mid);transition:color .2s;z-index:10}
+.area-close:hover{color:var(--navy)}
+.area-modal-inner{padding:52px 56px 60px;clear:both}
+.area-modal-inner .am-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--oro);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.area-modal-inner .am-label::before{content:'';display:block;width:18px;height:1px;background:var(--oro)}
+.area-modal-inner h3{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,36px);font-weight:400;color:var(--navy);line-height:1.2;margin-bottom:20px}
+.area-modal-inner .am-intro{font-size:16px;color:var(--grigio);line-height:1.85;margin-bottom:36px;font-weight:300;border-left:3px solid var(--oro-pale);padding-left:18px}
+.am-blocco{margin-bottom:32px}
+.am-blocco-title{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);font-weight:500;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--grigio-light)}
+.am-list{list-style:none}
+.am-list li{font-size:15px;color:var(--testo);padding:9px 0;border-bottom:1px solid var(--grigio-light);display:flex;gap:14px;line-height:1.6;font-weight:300}
+.am-list li::before{content:'→';color:var(--oro);flex-shrink:0;margin-top:1px}
+.am-rif{margin-top:32px;background:var(--bianco);border:1px solid var(--grigio-light);padding:18px 22px;font-size:13px;color:var(--grigio);line-height:1.7}
+.am-rif strong{color:var(--navy);font-weight:500}
+.am-cta-wrap{margin-top:36px;padding-top:28px;border-top:1px solid var(--grigio-light)}
+@media(max-width:640px){.area-modal-inner{padding:32px 24px 40px}.area-modal{max-height:95vh}}
+
+/* ── CRISI AZIENDALI ───────────────────────────────── */
+.crisi{background:#0b1929;color:var(--bianco);position:relative;overflow:hidden}
+.crisi::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(154,123,63,.03) 0px,rgba(154,123,63,.03) 1px,transparent 1px,transparent 80px)}
+.crisi-inner{position:relative;z-index:1}
+.crisi-intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end;margin-bottom:56px}
+.crisi .s-title{color:var(--bianco)}
+.crisi .s-text{color:rgba(255,255,255,.55);max-width:none}
+.crisi-avviso{border-left:3px solid var(--oro);padding:20px 24px;background:rgba(154,123,63,.08);font-size:14px;color:rgba(255,255,255,.6);line-height:1.7}
+.crisi-avviso strong{color:var(--oro-light);display:block;margin-bottom:6px;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.crisi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06)}
+.crisi-card{background:rgba(255,255,255,.03);padding:36px 32px;border-top:2px solid transparent;transition:all .25s;cursor:default}
+.crisi-card:hover{background:rgba(154,123,63,.08);border-top-color:var(--oro)}
+.crisi-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:rgba(154,123,63,.3);line-height:1;margin-bottom:16px}
+.crisi-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bianco);margin-bottom:12px;line-height:1.3}
+.crisi-text{font-size:14.5px;color:rgba(255,255,255,.5);line-height:1.8;font-weight:300}
+.crisi-tag{display:inline-block;margin-top:14px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--oro-light);border:1px solid rgba(154,123,63,.35);padding:4px 10px;border-radius:1px}
+
+/* ── ANALISI ───────────────────────────────────────── */
+.analisi{background:var(--navy);color:var(--bianco);position:relative;overflow:hidden}
+.analisi::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;border:1px solid rgba(154,123,63,.12)}
+.analisi::after{content:'';position:absolute;bottom:-160px;left:-60px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(154,123,63,.08)}
+.analisi-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;position:relative;z-index:1}
+.analisi .s-title{color:var(--bianco)}
+.analisi .s-text{color:rgba(255,255,255,.6);max-width:none}
+.analisi-nome{display:inline-block;border:1px solid var(--oro-light);color:var(--oro-light);font-size:10px;letter-spacing:4px;text-transform:uppercase;padding:8px 18px;margin-bottom:28px}
+.analisi-items{list-style:none}
+.analisi-items li{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:15.5px;color:rgba(255,255,255,.72);font-weight:300}
+.analisi-items li:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.dot{width:5px;height:5px;background:var(--oro-light);border-radius:50%;flex-shrink:0;margin-top:9px}
+.analisi-output{background:rgba(255,255,255,.05);border:1px solid rgba(154,123,63,.3);padding:28px;margin-top:28px}
+.analisi-output-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--oro-light);margin-bottom:14px}
+.analisi-output ul{list-style:none}
+.analisi-output ul li{font-size:13px;color:rgba(255,255,255,.6);padding:7px 0;display:flex;gap:10px}
+.analisi-output ul li::before{content:'—';color:var(--oro-light);flex-shrink:0}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);margin-top:40px}
+.pricing-card{background:rgba(255,255,255,.04);padding:32px 28px;position:relative;transition:background .25s}
+.pricing-card:hover{background:rgba(255,255,255,.08)}
+.pricing-card.featured{background:rgba(154,123,63,.15);border:1px solid rgba(154,123,63,.4)}
+.pricing-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--oro-light);margin-bottom:16px}
+.pricing-target{font-size:13px;color:rgba(255,255,255,.5);margin-bottom:20px;font-weight:300}
+.pricing-num{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--bianco);line-height:1}
+.pricing-num span{font-size:22px;color:rgba(255,255,255,.4)}
+.pricing-note{font-size:11px;color:rgba(255,255,255,.35);margin-top:8px}
+
+/* ── METODO ────────────────────────────────────────── */
+.metodo{background:var(--bianco-puro)}
+.metodo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border:1px solid var(--grigio-light)}
+.metodo-step{padding:40px 28px;border-right:1px solid var(--grigio-light)}
+.metodo-step:last-child{border-right:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--grigio-light);line-height:1;margin-bottom:18px}
+.step-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.25}
+.step-text{font-size:14px;color:var(--grigio);line-height:1.8;font-weight:300}
+
+/* ── CIRCOLARI ─────────────────────────────────────── */
+.circolari{background:var(--bianco)}
+.circ-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px}
+.circ-filtri{display:flex;gap:8px;flex-wrap:wrap}
+.circ-filtro{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 14px;border:1px solid var(--grigio-light);border-radius:1px;cursor:pointer;color:var(--grigio);background:none;transition:all .2s;font-family:'Outfit',sans-serif}
+.circ-filtro:hover,.circ-filtro.active{background:var(--navy);color:var(--bianco);border-color:var(--navy)}
+.circ-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--grigio-light);border:1px solid var(--grigio-light)}
+.circ-card{background:var(--bianco-puro);padding:32px 28px;position:relative;transition:background .2s}
+.circ-card:hover{background:#f7f5f2}
+.circ-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.circ-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:1px;font-weight:500}
+.tag-inps{background:#e3f0fc;color:#1565c0}
+.tag-inail{background:#e8f5e9;color:#2e7d32}
+.tag-min{background:#fff3e0;color:#e65100}
+.tag-fiscale{background:#f3e5f5;color:#6a1b9a}
+.tag-contratt{background:#fce4ec;color:#c62828}
+.tag-welfare{background:#e0f2f1;color:#00695c}
+.circ-data{font-size:11px;color:var(--grigio-mid);letter-spacing:.5px}
+.circ-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.circ-excerpt{font-size:13px;color:var(--grigio);line-height:1.75;font-weight:300;margin-bottom:18px}
+.circ-link{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--oro);text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:gap .2s}
+.circ-link::after{content:'→'}
+.circ-link:hover{gap:12px}
+.circ-more{text-align:center;margin-top:36px}
+.btn-outline{border:1px solid var(--navy);color:var(--navy);padding:12px 28px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;transition:all .25s;display:inline-block}
+.btn-outline:hover{background:var(--navy);color:var(--bianco)}
+
+/* ── BLOG ──────────────────────────────────────────── */
+.blog{background:var(--oro-pale);border-top:1px solid var(--grigio-light);border-bottom:1px solid var(--grigio-light)}
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.blog-card{background:var(--bianco-puro);border:1px solid var(--grigio-light)}
+.blog-card-img{height:180px;overflow:hidden;background:var(--navy)}
+.blog-card-img img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .3s}
+.blog-card:hover .blog-card-img img{opacity:.9}
+.blog-card-body{padding:28px}
+.blog-cat{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--oro);margin-bottom:10px;font-weight:500}
+.blog-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3}
+.blog-excerpt{font-size:13px;color:var(--grigio);line-height:1.75;font-weight:300;margin-bottom:18px}
+.blog-footer{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:var(--grigio-mid);border-top:1px solid var(--grigio-light);padding-top:14px}
+.blog-read{color:var(--navy);text-decoration:none;letter-spacing:1px;text-transform:uppercase;font-weight:500;transition:color .2s}
+.blog-read:hover{color:var(--oro)}
+
+/* ── GENITORIALITÀ PROMO ───────────────────────────── */
+.genitori-promo{background:#0e1c2f;position:relative;overflow:hidden}
+.genitori-promo::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%,rgba(196,169,106,.07) 0%,transparent 65%)}
+.genitori-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;position:relative;z-index:1}
+.genitori-left{padding:80px 60px;border-right:1px solid rgba(255,255,255,.06)}
+.genitori-right{padding:80px 60px;display:flex;flex-direction:column;justify-content:space-between}
+.genitori-overline{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--oro-light);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.genitori-overline::before{content:'';display:block;width:22px;height:1px;background:var(--oro-light)}
+.genitori-statement{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,46px);font-weight:400;color:#fff;line-height:1.18;margin-bottom:28px}
+.genitori-statement em{font-style:italic;color:var(--oro-light)}
+.genitori-sub{font-size:16px;color:rgba(255,255,255,.45);line-height:1.85;margin-bottom:36px}
+.genitori-link{display:inline-flex;align-items:center;gap:12px;color:var(--oro-light);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;border-bottom:1px solid rgba(196,169,106,.3);padding-bottom:4px;transition:gap .2s,border-color .2s}
+.genitori-link:hover{gap:18px;border-color:var(--oro-light)}
+.genitori-distinzione{background:rgba(196,169,106,.07);border:1px solid rgba(196,169,106,.18);padding:36px;margin-bottom:28px}
+.dist-virgolette{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:rgba(196,169,106,.25);line-height:.8;margin-bottom:12px}
+.dist-testo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:rgba(255,255,255,.7);line-height:1.55;margin-bottom:16px}
+.dist-firma{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.genitori-pillole{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.05)}
+.pillola{background:#0e1c2f;padding:18px 20px}
+.pillola-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--oro-light);line-height:1}
+.pillola-label{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-top:4px}
+
+/* ── AFORISMI ──────────────────────────────────────── */
+.aforismi{background:var(--bianco-puro);border-top:1px solid var(--grigio-light);padding:80px 60px;text-align:center}
+.aforismi-header{margin-bottom:52px}
+.aforismi-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.2vw,42px);font-weight:400;color:var(--navy);margin-bottom:14px;line-height:1.2}
+.aforismi-intro{font-size:15px;color:var(--grigio);max-width:560px;margin:0 auto;line-height:1.8;font-weight:300}
+.aforismi-carousel{position:relative;max-width:720px;margin:0 auto 36px;min-height:200px}
+.aforisma-slide{display:none;animation:afrFadeIn .5s ease}
+.aforisma-slide.active{display:block}
+@keyframes afrFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.aforisma-virgolette{font-family:'Cormorant Garamond',serif;font-size:72px;font-weight:300;color:var(--oro);line-height:.6;margin-bottom:16px;opacity:.55}
+.aforisma-testo{font-family:'Cormorant Garamond',serif;font-size:clamp(19px,2.2vw,26px);font-weight:400;font-style:italic;color:var(--navy);line-height:1.55;margin:0 0 28px;border:none;padding:0}
+.aforisma-fonte{display:flex;flex-direction:column;align-items:center;gap:4px}
+.aforisma-autore{font-size:13px;font-weight:500;color:var(--navy);letter-spacing:1.5px;text-transform:uppercase}
+.aforisma-ruolo{font-size:12px;color:var(--grigio-mid)}
+.aforismi-controls{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:8px}
+.afr-btn{background:none;border:1px solid var(--grigio-light);color:var(--navy);width:36px;height:36px;cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:border-color .2s,color .2s;border-radius:1px}
+.afr-btn:hover{border-color:var(--oro);color:var(--oro)}
+.afr-dots{display:flex;gap:8px}
+.afr-dot{width:6px;height:6px;border-radius:50%;background:var(--grigio-light);cursor:pointer;transition:background .2s}
+.afr-dot.active{background:var(--oro)}
+
+/* ── AZIENDE ESTERE ────────────────────────────────── */
+.estere{background:var(--bianco-puro);border-top:1px solid var(--grigio-light)}
+.estere-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.estere-right{background:var(--navy);padding:56px;color:var(--bianco)}
+.estere-tag{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--oro-light);margin-bottom:20px}
+.estere-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;line-height:1.3;margin-bottom:16px;color:var(--bianco)}
+.estere-text{font-size:14px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;margin-bottom:28px}
+.estere-list{list-style:none}
+.estere-list li{font-size:13px;color:rgba(255,255,255,.65);padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:12px}
+.estere-list li::before{content:'→';color:var(--oro-light);flex-shrink:0}
+
+/* ── IL PROFESSIONISTA ─────────────────────────────── */
+.leonardo{background:var(--bianco);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.leo-credentials{list-style:none;margin-top:28px;border-top:1px solid var(--grigio-light)}
+.leo-credentials li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--grigio-light);font-size:13px;color:var(--testo)}
+.leo-credentials li strong{color:var(--navy);font-weight:500;min-width:160px;flex-shrink:0}
+.leo-visual{height:520px;overflow:hidden}
+.leo-visual img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+/* ── CONTATTI + FORM ───────────────────────────────── */
+.contatti-section{background:var(--navy);position:relative;overflow:hidden}
+.contatti-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(154,123,63,.1) 0%,transparent 65%)}
+.contatti-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1}
+.contatti-info .s-label{color:var(--oro-light)}
+.contatti-info .s-label::before{background:var(--oro-light)}
+.contatti-info .s-title{color:var(--bianco)}
+.contatti-info .s-text{color:rgba(255,255,255,.55);max-width:none;margin-bottom:40px}
+.contatti-dati{list-style:none;border-top:1px solid rgba(255,255,255,.07)}
+.contatti-dati li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;gap:20px;align-items:flex-start}
+.contatti-dati .cd-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.3);min-width:80px;flex-shrink:0;padding-top:2px}
+.contatti-dati .cd-val{font-size:14px;color:rgba(255,255,255,.7)}
+.contatti-dati a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s}
+.contatti-dati a:hover{color:var(--oro-light)}
+
+/* Form */
+.form-box{background:var(--bianco-puro);padding:48px;border-top:3px solid var(--oro)}
+.form-box h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--navy);margin-bottom:6px}
+.form-box p{font-size:13px;color:var(--grigio);margin-bottom:28px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--grigio);margin-bottom:6px;font-weight:500}
+.form-group input,.form-group textarea,.form-group select{width:100%;border:1px solid var(--grigio-light);border-radius:1px;padding:12px 14px;font-size:14px;font-family:'Outfit',sans-serif;font-weight:300;color:var(--testo);background:var(--bianco);transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--navy)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-privacy{display:flex;gap:10px;align-items:flex-start;margin-bottom:22px}
+.form-privacy input[type=checkbox]{width:15px;height:15px;flex-shrink:0;margin-top:2px;cursor:pointer;accent-color:var(--navy)}
+.form-privacy label{font-size:12px;color:var(--grigio);line-height:1.5;cursor:pointer}
+.form-privacy a{color:var(--navy)}
+.btn-form{background:var(--navy);color:var(--bianco);border:none;padding:14px 32px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;cursor:pointer;border-radius:1px;transition:background .25s;font-family:'Outfit',sans-serif;width:100%}
+.btn-form:hover{background:var(--oro)}
+.form-msg{display:none;margin-top:14px;padding:12px 16px;border-radius:2px;font-size:13px}
+.form-msg.ok{background:#e8f5e9;color:#2e7d32;display:block}
+.form-msg.err{background:#ffebee;color:#c62828;display:block}
+
+/* ── FOOTER ────────────────────────────────────────── */
+footer{background:#080c14;color:rgba(255,255,255,.45);padding:52px 60px}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:36px}
+.footer-logo img{height:28px;opacity:.5;display:block;margin-bottom:14px}
+.footer-desc{font-size:13.5px;line-height:1.75;max-width:300px;color:rgba(255,255,255,.5)}
+.footer-col h4{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--oro-light);margin-bottom:14px;font-weight:500}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:10px}
+.footer-col ul li a{color:rgba(255,255,255,.55);text-decoration:none;font-size:13.5px;transition:color .2s}
+.footer-col ul li a:hover{color:rgba(255,255,255,.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:12px}
+.footer-ordine{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.65}
+.footer-social{display:flex;gap:14px;list-style:none}
+.footer-social a{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);transition:border-color .2s,background .2s}
+.footer-social a:hover{border-color:var(--oro-light);background:rgba(154,123,63,.15)}
+.footer-social svg{width:16px;height:16px;fill:rgba(255,255,255,.55);transition:fill .2s}
+.footer-social a:hover svg{fill:var(--oro-light)}
+
+/* ── WATERMARK ─────────────────────────────────────── */
+.bg-watermark{position:fixed;inset:0;pointer-events:none;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;opacity:.055}
+.bg-wm-circle{width:min(78vw,78vh);height:min(78vw,78vh);border-radius:50%;border:1.5px solid var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.bg-wm-text{font-family:'Cormorant Garamond',serif;font-size:min(46vw,46vh);font-weight:300;color:var(--navy);line-height:1;user-select:none;letter-spacing:-.02em}
+
+/* ── REVEAL ────────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── RESPONSIVE ────────────────────────────────────── */
+@media(max-width:960px){
+  nav{padding:18px 20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:64px 20px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:96px 20px 56px}
+  .hero-left::after{display:none}
+  .hero-right{min-height:220px;padding:40px 20px}
+  .numeri-grid{grid-template-columns:1fr 1fr}
+  .num-item:nth-child(2){border-right:none}
+  .cred-grid,.studio-inner,.analisi-inner,.estere-inner,.contatti-inner{grid-template-columns:1fr;gap:32px}
+  .cred-item{border-right:none;border-bottom:1px solid var(--grigio-light)}
+  .servizi-grid{grid-template-columns:1fr 1fr}
+  .metodo-steps{grid-template-columns:1fr 1fr}
+  .pricing-grid,.circ-grid,.blog-grid{grid-template-columns:1fr}
+  .form-row-2{grid-template-columns:1fr}
+  .leonardo{grid-template-columns:1fr}
+  .leo-visual{height:280px}
+  footer{padding:36px 20px}
+  .footer-top{flex-direction:column;gap:28px}
+  .footer-bottom{flex-direction:column;text-align:center;gap:10px}
+}
+@media print{
+  nav,.hamburger,.mobile-menu{display:none!important}
+  body{padding-top:0}
+}
+</style>
+</head>
+<body>
+
+<!-- WATERMARK -->
+<div class="bg-watermark" aria-hidden="true">
+  <div class="bg-wm-circle">
+    <span class="bg-wm-text">LD</span>
+  </div>
+</div>
+
+<!-- ════════════════ NAV ════════════════ -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-studio">Studio</span><span class="nav-logo-ld">LD</span>
+  </a>
+  <div style="display:flex;flex-direction:column;margin-left:14px;margin-right:auto;line-height:1.2">
+    <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--navy);letter-spacing:.5px">Studio Diella</span>
+    <span style="font-size:9px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--grigio)">Consulenza del Lavoro</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#studio">Lo Studio</a></li>
+    <li><a href="#settori">Settori</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#crisi">Crisi aziendali</a></li>
+    <li><a href="#estere">Internazionale</a></li>
+    <li><a href="#circolari">Circolari</a></li>
+    <li><a href="lavoro-femminile.html">Genitorialità</a></li>
+    <li><a href="#contatti" class="nav-cta">Contatti</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#studio" onclick="closeMobile()">Lo Studio</a></li>
+    <li><a href="#settori" onclick="closeMobile()">Settori</a></li>
+    <li><a href="#servizi" onclick="closeMobile()">Servizi</a></li>
+    <li><a href="#crisi" onclick="closeMobile()">Crisi aziendali</a></li>
+    <li><a href="#estere" onclick="closeMobile()">Internazionale</a></li>
+    <li><a href="circolari/index.html" onclick="closeMobile()">Circolari</a></li>
+    <li><a href="lavoro-femminile.html" onclick="closeMobile()">Genitorialità</a></li>
+    <li><a href="#contatti" onclick="closeMobile()">Contatti</a></li>
+  </ul>
+</div>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" style="padding:0">
+  <div class="hero-left">
+    <div class="hero-label reveal">Consulente del Lavoro · Desio · Milano</div>
+    <h1 class="reveal d1">Gestione del personale con <em>metodo e rigore tecnico</em></h1>
+    <p class="hero-sub reveal d2">Affianchiamo imprese strutturate nella gestione del personale, con presidio tecnico su contratti, contributi, adempimenti, costo del lavoro e rischio ispettivo.</p>
+    <div class="hero-ctas reveal d2">
+      <a href="#contatti" class="btn-primary">Richiedi una valutazione preliminare</a>
+      <a href="#servizi" class="btn-secondary">Scopri le aree di intervento</a>
+    </div>
+  </div>
+  <div class="hero-right"></div>
+</section>
+
+<!-- ════════════════ NUMERI ════════════════ -->
+<section class="numeri" style="padding:0">
+  <div class="numeri-grid">
+    <div class="num-item reveal">
+      <div class="num-val">15+</div>
+      <div class="num-label">Esperienza consolidata</div>
+    </div>
+    <div class="num-item reveal d1">
+      <div class="num-val">80+</div>
+      <div class="num-label">Aziende assistite</div>
+    </div>
+    <div class="num-item reveal d2">
+      <div class="num-val">5</div>
+      <div class="num-label">Settori ad alta complessità</div>
+    </div>
+    <div class="num-item reveal d3">
+      <div class="num-val">2</div>
+      <div class="num-label">Presidio Desio · Milano</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CREDIBILITÀ ════════════════ -->
+<section class="credibility" style="padding:0">
+  <div class="cred-grid">
+    <div class="cred-item reveal">
+      <div class="cred-icon"></div>
+      <div class="cred-title">Presidio operativo continuo</div>
+      <div class="cred-text">La gestione del personale richiede un professionista presente e reattivo. Seguiamo le aziende in modo continuativo, non a sportello.</div>
+    </div>
+    <div class="cred-item reveal d1">
+      <div class="cred-icon"></div>
+      <div class="cred-title">Aggiornamento normativo costante</div>
+      <div class="cred-text">La normativa del lavoro è in continua evoluzione. Ogni modifica rilevante viene analizzata e tradotta in indicazioni operative per le aziende clienti.</div>
+    </div>
+    <div class="cred-item reveal d2">
+      <div class="cred-icon"></div>
+      <div class="cred-title">Approccio strutturato</div>
+      <div class="cred-text">Metodologia uniforme su contratti, contributi, adempimenti e benefit. Gestione come vantaggio competitivo — non come adempimento residuale.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ LO STUDIO ════════════════ -->
+<section class="lo-studio" id="studio">
+  <div class="studio-inner">
+    <div class="reveal">
+      <div class="s-label">Lo Studio</div>
+      <h2 class="s-title">Uno studio che conosce il <em>peso delle scelte</em></h2>
+      <p class="s-text">Lo Studio Diella affianca imprenditori e responsabili delle risorse umane nella gestione strutturata e conforme del personale dipendente. L'attività si concentra su aziende con organici strutturati, settori regolamentati e situazioni che richiedono un presidio tecnico qualificato.</p>
+      <p class="s-text" style="margin-top:16px">L'elaborazione paghe è parte del servizio, ma non ne rappresenta il valore principale. Lo Studio presidia l'intero ciclo del rapporto di lavoro: assunzioni, inquadramenti, contribuzione, costo del personale, adempimenti, criticità disciplinari, rapporti con enti e rischio ispettivo.</p>
+      <div class="studio-ordine-box">
+        <p><strong>Dr. Leonardo Diella</strong> — Consulente del Lavoro, iscritto all'Albo dell'Ordine dei Consulenti del Lavoro della Provincia di Monza e della Brianza. Abilitato all'esercizio della professione ai sensi della L. 11 gennaio 1979, n. 12.</p>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <ul class="studio-valori">
+        <li><strong>Sede principale</strong>Desio (MB) — Via G. Garibaldi 6/A</li>
+        <li><strong>Sede Milano</strong>Via Vitruvio 43 — 20124 Milano</li>
+        <li><strong>Specializzazione</strong>PMI strutturate · Gruppi esteri in Italia</li>
+        <li><strong>Settori</strong>Ho.Re.Ca. · Metalmeccanica · Edilizia · Cooperative</li>
+        <li><strong>CCNL applicati</strong>Turismo · Commercio · Metalmeccanica · Edilizia · Cooperazione</li>
+        <li><strong>Lingue</strong>Italiano · Inglese (per clientela internazionale)</li>
+
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ SETTORI ════════════════ -->
+<section id="settori" style="padding:80px 60px;background:var(--bianco);border-top:1px solid var(--grigio-light)">
+  <div class="s-label reveal">Settori di specializzazione</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start">
+    <div>
+      <h2 class="s-title reveal d1">Esperienza consolidata nei settori <em>più esigenti</em></h2>
+      <p class="s-text reveal d2">Lo Studio opera prevalentemente in settori ad alta densità normativa, dove la complessità contrattuale e gli obblighi ispettivi richiedono una competenza specifica e aggiornata.</p>
+      <a href="settori.html" class="btn-secondary reveal d3" style="margin-top:28px;display:inline-block">Scopri i settori →</a>
+    </div>
+    <ul class="studio-valori reveal d1" style="margin-top:0;border-top:1px solid var(--grigio-light)">
+      <li><strong>Ho.Re.Ca.</strong>Alberghi, ristoranti, catering — CCNL Turismo e Pubblici Esercizi</li>
+      <li><strong>Metalmeccanica</strong>Industria e artigianato — CCNL Metalmeccanici</li>
+      <li><strong>Edilizia</strong>Imprese e cooperative — Casse Edili, DURC, sicurezza</li>
+      <li><strong>Cooperative</strong>Sociali e di produzione — normativa specifica</li>
+      <li><strong>Commercio</strong>Terziario e servizi — CCNL Commercio e Terziario</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════════════════ SERVIZI ════════════════ -->
+<section class="servizi" id="servizi">
+  <div class="s-label reveal">Aree di intervento</div>
+  <h2 class="s-title reveal d1">Aree di intervento <em>dello Studio</em></h2>
+  <div class="servizi-grid">
+    <div class="servizio-card reveal" role="button" tabindex="0" data-area="amm" onclick="openArea('amm')" onkeydown="if(event.key==='Enter')openArea('amm')">
+      <div class="serv-title">Amministrazione del personale</div>
+      <div class="serv-text">Elaborazione cedolini, gestione LUL, adempimenti contributivi mensili e annuali, reportistica.</div>
+      <div class="serv-expand">
+        <ul class="serv-bullets">
+          <li>Cedolini paghe e variazioni mensili</li>
+          <li>LUL e comunicazioni obbligatorie</li>
+          <li>UNIEMENS, F24, 770, CU annuali</li>
+          <li>Autoliquidazione INAIL</li>
+          <li>Report costo del lavoro</li>
+        </ul>
+      </div>
+      <div class="serv-cta">Approfondisci →</div>
+    </div>
+    <div class="servizio-card reveal d1" role="button" tabindex="0" data-area="gius" onclick="openArea('gius')" onkeydown="if(event.key==='Enter')openArea('gius')">
+      <div class="serv-title">Consulenza giuslavoristica</div>
+      <div class="serv-text">Rapporti con INPS, INAIL e Ispettorato, agevolazioni contributive, DURC, DURF e difesa ispettiva.</div>
+      <div class="serv-expand">
+        <ul class="serv-bullets">
+          <li>Assistenza ispettiva ITL</li>
+          <li>Agevolazioni e incentivi contributivi</li>
+          <li>DURC e DURF — verifica e regolarizzazione</li>
+          <li>Classificazione rapporti di lavoro</li>
+          <li>Conciliazione stragiudiziale</li>
+        </ul>
+      </div>
+      <div class="serv-cta">Approfondisci →</div>
+    </div>
+    <div class="servizio-card reveal d2" role="button" tabindex="0" data-area="contr" onclick="openArea('contr')" onkeydown="if(event.key==='Enter')openArea('contr')">
+      <div class="serv-title">Contrattualistica e inquadramento</div>
+      <div class="serv-text">Corretta applicazione dei CCNL, redazione contratti individuali, gestione causali e proroghe.</div>
+      <div class="serv-expand">
+        <ul class="serv-bullets">
+          <li>Analisi e applicazione CCNL</li>
+          <li>Contratti TI, TD, apprendistato</li>
+          <li>Causali e proroghe contratti a termine</li>
+          <li>Patto di non concorrenza</li>
+          <li>Verifica inquadramenti e livelli</li>
+        </ul>
+      </div>
+      <div class="serv-cta">Approfondisci →</div>
+    </div>
+    <div class="servizio-card reveal d3" role="button" tabindex="0" data-area="crit" onclick="openArea('crit')" onkeydown="if(event.key==='Enter')openArea('crit')">
+      <div class="serv-title">Gestione delle criticità</div>
+      <div class="serv-text">Procedure disciplinari, licenziamenti, gestione assenze e vertenze nelle fasi più delicate.</div>
+      <div class="serv-expand">
+        <ul class="serv-bullets">
+          <li>Procedimento disciplinare (art. 7)</li>
+          <li>Licenziamenti individuali e collettivi</li>
+          <li>Comporto malattia e assenze</li>
+          <li>Accordi di risoluzione consensuale</li>
+          <li>Vertenze e conciliazione</li>
+        </ul>
+      </div>
+      <div class="serv-cta">Approfondisci →</div>
+    </div>
+    <div class="servizio-card reveal d4" role="button" tabindex="0" data-area="welf" onclick="openArea('welf')" onkeydown="if(event.key==='Enter')openArea('welf')">
+      <div class="serv-title">Welfare e benefit aziendali</div>
+      <div class="serv-text">Piani welfare, fringe benefit, premio di risultato al 5%, fondi pensione. Ottimizzazione fiscale.</div>
+      <div class="serv-expand">
+        <ul class="serv-bullets">
+          <li>Piani welfare (art. 51 TUIR)</li>
+          <li>Fringe benefit e soglie aggiornate</li>
+          <li>Premio di risultato — tassazione 5%</li>
+          <li>Fondi pensione e casse sanitarie</li>
+          <li>Buoni pasto ed flexible benefit</li>
+        </ul>
+      </div>
+      <div class="serv-cta">Approfondisci →</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MODAL AREE DI INTERVENTO ══ -->
+<div class="area-overlay" id="areaOverlay" onclick="closeArea(event)">
+  <div class="area-modal" id="areaModal" role="dialog" aria-modal="true">
+    <button class="area-close" onclick="closeArea()" aria-label="Chiudi">&times;</button>
+    <div class="area-modal-inner" id="areaContent"></div>
+  </div>
+</div>
+
+<!-- ════════════════ CRISI AZIENDALI ════════════════ -->
+<section class="crisi" id="crisi">
+  <div class="crisi-inner">
+    <div class="crisi-intro">
+      <div>
+        <div class="s-label reveal" style="color:var(--oro-light)">Situazioni straordinarie</div>
+        <h2 class="s-title reveal d1">Gestione delle <em style="color:var(--oro-light)">crisi aziendali</em><br>e operazioni complesse</h2>
+        <p class="s-text reveal d2">Alcune situazioni richiedono una competenza che va oltre la gestione ordinaria del personale: ristrutturazioni, crisi occupazionali, operazioni societarie straordinarie. Lo Studio assiste le imprese anche nelle fasi più delicate, con un presidio tecnico specifico e una gestione coordinata con legali e advisor finanziari.</p>
+      </div>
+      <div class="reveal d2">
+        <div class="crisi-avviso">
+          <strong>Nota operativa</strong>
+          In questi contesti il Consulente del Lavoro non opera da solo. Lo Studio collabora strutturalmente con avvocati giuslavoristi, commercialisti e advisor finanziari per garantire una gestione integrata e coerente dell'operazione.
+        </div>
+      </div>
+    </div>
+
+    <div class="crisi-grid">
+      <div class="crisi-card reveal">
+        <div class="crisi-num">01</div>
+        <div class="crisi-title">Cassa Integrazione Guadagni Ordinaria</div>
+        <div class="crisi-text">Gestione delle procedure CIGO per eventi temporanei e transitori. Predisposizione della documentazione, comunicazioni sindacali, invio telematico INPS e verifica dei requisiti di accesso.</div>
+        <span class="crisi-tag">CIGO · Art. 10 D.Lgs. 148/2015</span>
+      </div>
+      <div class="crisi-card reveal d1">
+        <div class="crisi-num">02</div>
+        <div class="crisi-title">Cassa Integrazione Guadagni Straordinaria</div>
+        <div class="crisi-text">Supporto nella gestione di procedure CIGS per ristrutturazione, riorganizzazione e crisi aziendale. Accordi sindacali, piani di gestione, monitoraggio e rendicontazione.</div>
+        <span class="crisi-tag">CIGS · Art. 21 D.Lgs. 148/2015</span>
+      </div>
+      <div class="crisi-card reveal d2">
+        <div class="crisi-num">03</div>
+        <div class="crisi-title">Ammortizzatori sociali in deroga e FIS</div>
+        <div class="crisi-text">Accesso al Fondo di Integrazione Salariale e agli strumenti in deroga per settori non coperti dalla cassa integrazione ordinaria. Gestione degli accordi e delle comunicazioni agli enti.</div>
+        <span class="crisi-tag">FIS · D.Lgs. 148/2015</span>
+      </div>
+      <div class="crisi-card reveal">
+        <div class="crisi-num">04</div>
+        <div class="crisi-title">Due diligence lavoristica</div>
+        <div class="crisi-text">Analisi tecnica del personale in occasione di acquisizioni, fusioni e cessioni d'azienda. Verifica degli inquadramenti, del passivo contributivo, delle posizioni a rischio e della corretta tenuta documentale.</div>
+        <span class="crisi-tag">M&amp;A · Operazioni straordinarie</span>
+      </div>
+      <div class="crisi-card reveal d1">
+        <div class="crisi-num">05</div>
+        <div class="crisi-title">Trasferimento d'azienda e di ramo</div>
+        <div class="crisi-text">Gestione degli obblighi informativi e sindacali ex art. 47 L. 428/1990. Predisposizione dei verbali di consultazione, comunicazioni ai lavoratori e gestione del passaggio dei rapporti al cessionario.</div>
+        <span class="crisi-tag">Art. 47 L. 428/1990</span>
+      </div>
+      <div class="crisi-card reveal d2">
+        <div class="crisi-num">06</div>
+        <div class="crisi-title">Ristrutturazioni e riduzioni di personale</div>
+        <div class="crisi-text">Procedure di licenziamento collettivo ex L. 223/1991, accordi di non opposizione, incentivi all'esodo. Gestione delle comunicazioni obbligatorie e dell'iter sindacale nelle ristrutturazioni complesse.</div>
+        <span class="crisi-tag">L. 223/1991 · Esodi incentivati</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ ANALISI ════════════════ -->
+<section class="analisi" id="analisi">
+  <div class="analisi-inner">
+    <div>
+      <div class="s-label reveal" style="color:var(--oro-light)">Servizio diagnostico</div>
+      <div class="analisi-nome reveal d1">Analisi della gestione del personale</div>
+      <h2 class="s-title reveal d2">Verifica <em style="color:var(--oro-light)">compliance</em> lavoro</h2>
+      <p class="s-text reveal d3">Analisi tecnica strutturata della gestione del personale finalizzata a individuare criticità operative, aree di esposizione al rischio ispettivo e opportunità di miglioramento organizzativo.</p>
+      <p class="s-text reveal d3" style="margin-top:16px">Il punto di partenza per una gestione più consapevole. Prima che le criticità si manifestino in sede ispettiva.</p>
+
+      <div class="reveal d4" style="margin-top:28px;border-left:3px solid var(--oro-light);padding:20px 24px;background:rgba(154,123,63,.08)">
+        <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--oro-light);margin-bottom:12px;font-weight:500">Quando è utile</div>
+        <ul style="list-style:none">
+          <li style="font-size:14px;color:rgba(255,255,255,.65);padding:6px 0;display:flex;gap:10px"><span style="color:var(--oro-light);flex-shrink:0">→</span>Prima di un'ispezione o dopo accessi ispettivi</li>
+          <li style="font-size:14px;color:rgba(255,255,255,.65);padding:6px 0;display:flex;gap:10px"><span style="color:var(--oro-light);flex-shrink:0">→</span>Prima di acquisizioni, fusioni o cambio consulente</li>
+          <li style="font-size:14px;color:rgba(255,255,255,.65);padding:6px 0;display:flex;gap:10px"><span style="color:var(--oro-light);flex-shrink:0">→</span>Quando l'organico cresce rapidamente</li>
+          <li style="font-size:14px;color:rgba(255,255,255,.65);padding:6px 0;display:flex;gap:10px"><span style="color:var(--oro-light);flex-shrink:0">→</span>Quando ci sono molti straordinari, assenze o turnover</li>
+          <li style="font-size:14px;color:rgba(255,255,255,.65);padding:6px 0;display:flex;gap:10px"><span style="color:var(--oro-light);flex-shrink:0">→</span>Quando manca certezza su CCNL, livelli e costo reale</li>
+        </ul>
+      </div>
+
+      <div class="analisi-output reveal d4">
+        <div class="analisi-output-label">Output — Relazione tecnica scritta</div>
+        <ul>
+          <li>Criticità rilevate con dettaglio per area tematica</li>
+          <li>Livello di esposizione al rischio ispettivo</li>
+          <li>Azioni correttive prioritizzate per urgenza</li>
+        </ul>
+      </div>
+
+      <div class="reveal" style="background:var(--bianco);border:1px solid rgba(154,123,63,.25);border-left:3px solid var(--oro);padding:28px 32px;margin-top:40px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin-bottom:12px">Come si struttura l'incarico</div>
+        <p style="font-size:15px;color:var(--grigio);line-height:1.85;font-weight:300">L'analisi viene condotta come incarico preliminare su perimetro definito. Il corrispettivo è determinato in funzione della complessità organizzativa e documentale, concordato prima dell'avvio.</p>
+      </div>
+      <div style="margin-top:32px" class="reveal">
+        <a href="#contatti" class="btn-gold" style="background:var(--oro);color:var(--bianco);padding:14px 30px;font-size:11px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;border-radius:1px;display:inline-block;transition:background .25s">Richiedi l'analisi</a>
+      </div>
+    </div>
+    <div>
+      <ul class="analisi-items reveal">
+        <li><span class="dot"></span>Verifica inquadramenti contrattuali e livelli CCNL</li>
+        <li><span class="dot"></span>Corretta applicazione del contratto collettivo applicato</li>
+        <li><span class="dot"></span>Gestione orari, straordinari, riposi e ferie</li>
+        <li><span class="dot"></span>Posizione contributiva INPS e INAIL</li>
+        <li><span class="dot"></span>Esposizione contributiva complessiva e TFR</li>
+        <li><span class="dot"></span>Tenuta e conservazione del LUL</li>
+        <li><span class="dot"></span>Procedure disciplinari e documentazione</li>
+        <li><span class="dot"></span>Sicurezza sul lavoro e DVR — verifiche formali</li>
+        <li><span class="dot"></span>Utilizzo agevolazioni e incentivi normativi</li>
+        <li><span class="dot"></span>Welfare aziendale — struttura e conformità fiscale</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ METODO ════════════════ -->
+<section class="metodo">
+  <div class="s-label reveal">Modalità operative</div>
+  <h2 class="s-title reveal d1">Come <em>operiamo</em></h2>
+  <div class="metodo-steps">
+    <div class="metodo-step reveal">
+      <div class="step-num">01</div>
+      <div class="step-title">Incontro conoscitivo</div>
+      <div class="step-text">Primo appuntamento per comprendere la struttura aziendale, le criticità in essere e le priorità operative. Senza impegno preliminare.</div>
+    </div>
+    <div class="metodo-step reveal d1">
+      <div class="step-num">02</div>
+      <div class="step-title">Definizione del perimetro</div>
+      <div class="step-text">Individuazione dell'ambito di intervento, proposta tecnica ed economica. Trasparenza completa su attività e corrispettivi.</div>
+    </div>
+    <div class="metodo-step reveal d2">
+      <div class="step-num">03</div>
+      <div class="step-title">Gestione continuativa</div>
+      <div class="step-text">Presidio costante di adempimenti, scadenze e aggiornamenti normativi. Interlocutore unico e responsabile per ogni area.</div>
+    </div>
+    <div class="metodo-step reveal d3">
+      <div class="step-num">04</div>
+      <div class="step-title">Aggiornamento proattivo</div>
+      <div class="step-text">Ogni novità normativa rilevante viene comunicata prima che diventi un problema. Non aspettiamo che il cliente chieda.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ AZIENDE ESTERE ════════════════ -->
+<section class="estere" id="estere" style="padding:96px 60px">
+  <div class="estere-inner">
+    <div class="reveal">
+      <div class="s-label">Operatività internazionale</div>
+      <h2 class="s-title">Gruppi esteri in Italia: gestione del personale <em>senza ambiguità normative</em></h2>
+      <p class="s-text">Assumere personale in Italia significa applicare un sistema normativo stratificato, con CCNL, contribuzione obbligatoria e obblighi ispettivi che variano per settore e contratto.</p>
+      <p class="s-text" style="margin-top:18px">Lo Studio affianca i gruppi internazionali dalla prima assunzione alla gestione ordinaria, con interlocuzione diretta con la direzione estera.</p>
+      <div style="margin-top:36px">
+        <a href="#contatti" class="btn-primary">Richiedi un incontro</a>
+      </div>
+    </div>
+    <div class="estere-right reveal d1">
+      <div class="estere-tag">Aree di intervento</div>
+      <div class="estere-title">Gestione del personale per gruppi esteri in Italia</div>
+      <div class="estere-text">Dalla costituzione del rapporto di lavoro alla compliance continuativa — con un interlocutore unico e responsabile.</div>
+      <ul class="estere-list">
+        <li>Costituzione del rapporto di lavoro in Italia</li>
+        <li>Individuazione e applicazione del CCNL di riferimento</li>
+        <li>Gestione di distacchi internazionali e trasferimenti</li>
+        <li>Adempimenti INPS, INAIL e obblighi fiscali sul lavoro</li>
+        <li>Supporto documentale in lingua per la direzione estera</li>
+        <li>Analisi delle convenzioni internazionali di sicurezza sociale</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CIRCOLARI ════════════════ -->
+<section class="circolari" id="circolari">
+  <div class="circ-header">
+    <div>
+      <div class="s-label reveal">Aggiornamenti normativi</div>
+      <h2 class="s-title reveal d1">Circolari <em>2026</em> e aggiornamenti</h2>
+    </div>
+    <div class="circ-filtri no-print reveal">
+      <button class="circ-filtro active" onclick="filtraCirc('tutti',this)">Tutti</button>
+      <button class="circ-filtro" onclick="filtraCirc('inps',this)">INPS</button>
+      <button class="circ-filtro" onclick="filtraCirc('inail',this)">INAIL</button>
+      <button class="circ-filtro" onclick="filtraCirc('min',this)">Min. Lavoro</button>
+      <button class="circ-filtro" onclick="filtraCirc('fiscale',this)">Fiscale</button>
+      <button class="circ-filtro" onclick="filtraCirc('contratt',this)">Contrattuale</button>
+    </div>
+  </div>
+
+  <div class="circ-grid" id="circGrid">
+
+    <!-- ══ INSERIRE LE CIRCOLARI QUI — una .circ-card per ciascuna ══
+         data-cat: inps | inail | min | fiscale | contratt | welfare
+    ═══════════════════════════════════════════════════════════════ -->
+
+    <div class="circ-card reveal" data-cat="fiscale">
+      <div class="circ-meta">
+        <span class="circ-tag tag-fiscale">Fiscale</span>
+        <span class="circ-data">Circ. 01/2026 · Febbraio 2026</span>
+      </div>
+      <div class="circ-title">Novità lavoro e paghe 2026 — impatti operativi per le aziende</div>
+      <div class="circ-excerpt">Nuove aliquote IRPEF (seconda aliquota al 33%), premi di risultato tassati all'1%, detassazione aumenti da rinnovo CCNL al 5%, tassazione agevolata lavoro notturno e festivo, fringe benefit e buoni pasto aggiornati.</div>
+      <a href="circolari/index.html" class="circ-link">Leggi la circolare</a>
+    </div>
+
+    <div class="circ-card reveal d1" data-cat="min">
+      <div class="circ-meta">
+        <span class="circ-tag tag-min">Min. Lavoro</span>
+        <span class="circ-data">Circ. 02/2026 · Marzo 2026</span>
+      </div>
+      <div class="circ-title">Obbligo pubblicazione offerte di lavoro sul SIISL dal 1° aprile 2026</div>
+      <div class="circ-excerpt">Dal 1° aprile 2026, per accedere agli incentivi contributivi alle assunzioni è obbligatorio pubblicare l'offerta di lavoro sulla piattaforma SIISL. Checklist operativa per le aziende e verifica dei requisiti.</div>
+      <a href="circolari/index.html" class="circ-link">Leggi la circolare</a>
+    </div>
+
+    <div class="circ-card reveal d2" data-cat="inps">
+      <div class="circ-meta">
+        <span class="circ-tag tag-inps">INPS</span>
+        <span class="circ-data">Circ. 03/2026 · Marzo 2026</span>
+      </div>
+      <div class="circ-title">Riforma TFR e previdenza complementare — nuove modalità dal 1° luglio 2026</div>
+      <div class="circ-excerpt">La Legge di Bilancio 2026 introduce l'adesione automatica rafforzata ai fondi pensione. Dal 1° luglio, in assenza di scelta entro 60 giorni, si attivano TFR, contributo datoriale e contributo lavoratore. Impatti rilevanti sul costo del lavoro.</div>
+      <a href="circolari/index.html" class="circ-link">Leggi la circolare</a>
+    </div>
+
+    <div class="circ-card reveal" data-cat="fiscale">
+      <div class="circ-meta">
+        <span class="circ-tag tag-fiscale">Fiscale</span>
+        <span class="circ-data">Area tematica</span>
+      </div>
+      <div class="circ-title">Fringe benefit — soglie di esenzione e trattamento fiscale</div>
+      <div class="circ-excerpt">Soglia di esenzione fiscale e contributiva a 1.000 euro (2.000 euro con figli a carico). Inclusi nel plafond i rimborsi per mutuo e affitto della prima casa. Aggiornamento annuale.</div>
+      <a href="#contatti" class="circ-link">Richiedi approfondimento</a>
+    </div>
+
+    <div class="circ-card reveal d1" data-cat="inail">
+      <div class="circ-meta">
+        <span class="circ-tag tag-inail">INAIL</span>
+        <span class="circ-data">Scadenza annuale</span>
+      </div>
+      <div class="circ-title">Autoliquidazione INAIL — scadenze e modalità di versamento</div>
+      <div class="circ-excerpt">Scadenza annuale per il versamento del premio INAIL. Coefficienti aggiornati per la determinazione del premio anticipato. Verificare la congruità della base di calcolo.</div>
+      <a href="#contatti" class="circ-link">Richiedi approfondimento</a>
+    </div>
+
+    <div class="circ-card reveal d2" data-cat="contratt">
+      <div class="circ-meta">
+        <span class="circ-tag tag-contratt">Contrattuale</span>
+        <span class="circ-data">Area tematica</span>
+      </div>
+      <div class="circ-title">Contratti a termine — causali, proroghe e novità normative</div>
+      <div class="circ-excerpt">Disciplina aggiornata dei contratti a tempo determinato: revisione delle causali, regime delle proroghe e impatti operativi per la gestione dei rapporti in corso.</div>
+      <a href="#contatti" class="circ-link">Richiedi approfondimento</a>
+    </div>
+
+  </div>
+  <div class="circ-more" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+    <a href="circolari/index.html" class="btn-outline reveal">Tutte le circolari →</a>
+    <a href="#contatti" class="btn-outline reveal d1">Ricevi aggiornamenti via email</a>
+  </div>
+</section>
+
+<!-- ════════════════ BLOG ════════════════ -->
+<section class="blog" id="blog">
+  <div class="s-label reveal">Approfondimenti</div>
+  <h2 class="s-title reveal d1">Risorse e <em>analisi</em> tecniche</h2>
+  <p class="s-text reveal d2">Contributi pratici su temi di diritto del lavoro, gestione HR e fiscalità del personale — scritti per imprenditori e responsabili aziendali.</p>
+
+  <div class="blog-grid">
+
+    <!-- ══ INSERIRE GLI ARTICOLI QUI ══ -->
+
+    <div class="blog-card reveal">
+      <div class="blog-card-img">
+        <img src="https://cdn.prod.website-files.com/64a16dfb2fbb1442a9fdf4fd/64b537c77cabeaaa12e00cc9_IMG_20230716_181909.jpg" alt="">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-cat">Contrattualistica</div>
+        <div class="blog-title">Contratto a tempo determinato dopo il Decreto Lavoro: cosa cambia per le aziende</div>
+        <div class="blog-excerpt">Le nuove causali per i contratti a termine e il regime delle proroghe. Cosa devono sapere i datori di lavoro per non incorrere in irregolarità.</div>
+        <div class="blog-footer">
+          <span>Approfondimento</span>
+          <a href="#" class="blog-read">Leggi →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal d1">
+      <div class="blog-card-img">
+        <img src="https://cdn.prod.website-files.com/64a16dfb2fbb1442a9fdf4fd/64b537c631e2d786aaa63738_IMG_20230716_173353.jpg" alt="">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-cat">Welfare aziendale</div>
+        <div class="blog-title">Fringe benefit 2025: la guida pratica per strutturare il pacchetto retributivo</div>
+        <div class="blog-excerpt">Soglie di esenzione, inclusione dei rimborsi abitativi, buoni pasto e previdenza complementare. Come ottimizzare il costo del lavoro senza violare la normativa fiscale.</div>
+        <div class="blog-footer">
+          <span>Approfondimento</span>
+          <a href="#" class="blog-read">Leggi →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-card reveal d2">
+      <div class="blog-card-img" style="background:var(--navy-light)">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Documenti e compliance" style="object-position:center 60%">
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-cat">Compliance</div>
+        <div class="blog-title">Ispezioni del lavoro: come prepararsi e quali documenti tenere aggiornati</div>
+        <div class="blog-excerpt">La documentazione che l'Ispettorato verifica in prima battuta, le irregolarità più frequenti e il peso delle sanzioni. Una checklist operativa per le aziende.</div>
+        <div class="blog-footer">
+          <span>Approfondimento</span>
+          <a href="#" class="blog-read">Leggi →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════ GENITORIALITÀ — BLOCCO POSIZIONAMENTO ════════════════ -->
+<!-- ════════════════ QUANDO INTERVENIAMO ════════════════ -->
+<section style="background:var(--bianco-puro);border-top:1px solid var(--grigio-light);padding:96px 60px">
+  <div class="s-label reveal">Perché ci coinvolgono</div>
+  <h2 class="s-title reveal d1">Quando interviene <em>lo Studio</em></h2>
+  <p class="s-text reveal d2" style="margin-bottom:48px">Lo Studio viene coinvolto quando la gestione del personale richiede un presidio tecnico più strutturato rispetto alla semplice amministrazione ordinaria.</p>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--grigio-light);border:1px solid var(--grigio-light)">
+    <div style="background:var(--bianco-puro);padding:36px 28px" class="reveal">
+      <div style="width:36px;height:1px;background:var(--oro);margin-bottom:20px"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3">Crescita dell'organico</div>
+      <p style="font-size:14px;color:var(--grigio);line-height:1.8;font-weight:300">Quando l'azienda assume, cambia CCNL, apre nuove sedi o struttura reparti.</p>
+    </div>
+    <div style="background:var(--bianco-puro);padding:36px 28px" class="reveal d1">
+      <div style="width:36px;height:1px;background:var(--oro);margin-bottom:20px"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3">Rischio ispettivo o contributivo</div>
+      <p style="font-size:14px;color:var(--grigio);line-height:1.8;font-weight:300">Quando servono verifiche su inquadramenti, orari, LUL, INPS, INAIL, DURC.</p>
+    </div>
+    <div style="background:var(--bianco-puro);padding:36px 28px" class="reveal d2">
+      <div style="width:36px;height:1px;background:var(--oro);margin-bottom:20px"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3">Costo del lavoro fuori controllo</div>
+      <p style="font-size:14px;color:var(--grigio);line-height:1.8;font-weight:300">Quando l'imprenditore non ha lettura chiara di costo azienda, incentivi, welfare, premi e budget.</p>
+    </div>
+    <div style="background:var(--bianco-puro);padding:36px 28px" class="reveal d3">
+      <div style="width:36px;height:1px;background:var(--oro);margin-bottom:20px"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--navy);margin-bottom:10px;line-height:1.3">Criticità con dipendenti</div>
+      <p style="font-size:14px;color:var(--grigio);line-height:1.8;font-weight:300">Quando servono contestazioni disciplinari, accordi, licenziamenti, conciliazioni o ammortizzatori.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════ IL PROFESSIONISTA ════════════════ -->
+<section class="leonardo" id="professionista" style="padding:96px 60px;background:var(--bianco-puro)">
+  <div class="reveal">
+    <div class="s-label">Il professionista</div>
+    <h2 class="s-title">Dr. Leonardo <em>Diella</em></h2>
+    <p class="s-text">Consulente del Lavoro iscritto all'Ordine della Provincia di Monza e della Brianza. Specializzato nella gestione strutturata del personale per piccole e medie imprese e gruppi aziendali — italiani ed esteri.</p>
+    <p class="s-text" style="margin-top:16px">Opera con imprenditori e responsabili HR che richiedono un presidio tecnico qualificato: non un fornitore di cedolini, ma un interlocutore professionale stabile.</p>
+    <ul class="leo-credentials">
+      <li><strong>Ordine professionale</strong>Consulente del Lavoro — Ordine Provincia di Monza e della Brianza</li>
+      <li><strong>Abilitazione</strong>L. 11 gennaio 1979, n. 12</li>
+      <li><strong>Specializzazione</strong>PMI strutturate · Aziende con organico consolidato</li>
+      <li><strong>Settori</strong>Ho.Re.Ca. · Metalmeccanica · Edilizia · Cooperative</li>
+      <li><strong>Sedi operative</strong>Desio (MB) — Via G. Garibaldi 6/A · Milano — Via Vitruvio 43</li>
+      <li><strong>Ambiti</strong>Contrattualistica · Welfare · Compliance · Assistenza ispettiva</li>
+    </ul>
+  </div>
+  <div class="leo-visual reveal d1">
+    <img src="https://cdn.prod.website-files.com/64a16dfb2fbb1442a9fdf4fd/64b537c631e2d786aaa63738_IMG_20230716_173353.jpg"
+         alt="Dr. Leonardo Diella — Consulente del Lavoro">
+  </div>
+</section>
+
+<!-- ════════════════ CONTATTI + FORM ════════════════ -->
+<section class="contatti-section" id="contatti">
+  <div class="contatti-inner">
+    <div class="contatti-info reveal">
+      <div class="s-label">Contatti</div>
+      <h2 class="s-title">Richiedi una <em>valutazione preliminare</em></h2>
+      <p class="s-text">Per un primo incontro conoscitivo, un'analisi della gestione del personale o informazioni sui servizi dello Studio. Rispondiamo entro un giorno lavorativo.</p>
+      <ul class="contatti-dati">
+        <li>
+          <span class="cd-label">Telefono</span>
+          <span class="cd-val"><a href="tel:+393510576261">+39 351 057 6261</a></span>
+        </li>
+
+        <li>
+          <span class="cd-label">Email</span>
+          <span class="cd-val"><a href="mailto:info@studiodiella.it">info@studiodiella.it</a></span>
+        </li>
+        <li>
+          <span class="cd-label">PEC</span>
+          <span class="cd-val"><a href="mailto:l.diella@consulentidellavoropec.it">l.diella@consulentidellavoropec.it</a></span>
+        </li>
+        <li>
+          <span class="cd-label">Desio</span>
+          <span class="cd-val">Via G. Garibaldi 6/A — 20832 Desio (MB)</span>
+        </li>
+        <li>
+          <span class="cd-label">Milano</span>
+          <span class="cd-val">Via Vitruvio 43 — 20124 Milano</span>
+        </li>
+        <li>
+          <span class="cd-label">Orari</span>
+          <span class="cd-val">Lun – Ven 9:00 / 18:00</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="reveal d1">
+      <div class="form-box">
+        <h3>Modulo di contatto</h3>
+        <p>Compila il modulo e ti ricontatteremo entro il prossimo giorno lavorativo.</p>
+        <form id="contactForm" name="contatti" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleForm(event)">
+          <input type="hidden" name="form-name" value="contatti">
+          <p style="display:none"><label>Non compilare: <input name="bot-field"></label></p>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="nome">Nome e Cognome *</label>
+              <input type="text" id="nome" name="nome" required placeholder="Mario Rossi">
+            </div>
+            <div class="form-group">
+              <label for="azienda">Azienda</label>
+              <input type="text" id="azienda" name="azienda" placeholder="Rossi Srl">
+            </div>
+          </div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="mario@azienda.it">
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+39 02 1234567">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="oggetto">Oggetto della richiesta</label>
+            <select id="oggetto" name="oggetto">
+              <option value="">— seleziona —</option>
+              <option>Analisi della gestione del personale</option>
+              <option>Consulenza contrattualistica</option>
+              <option>Welfare aziendale</option>
+              <option>Azienda estera in Italia</option>
+              <option>Informazioni generali</option>
+              <option>Altro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="messaggio">Messaggio *</label>
+            <textarea id="messaggio" name="messaggio" required placeholder="Descrivi brevemente la tua situazione o la richiesta..."></textarea>
+          </div>
+          <div class="form-privacy">
+            <input type="checkbox" id="privacy" name="privacy" required>
+            <label for="privacy">Ho letto l'<a href="privacy.html">informativa sulla privacy</a> e acconsento al trattamento dei dati personali ai sensi del GDPR (Reg. UE 2016/679).</label>
+          </div>
+          <button type="submit" class="btn-form">Invia la richiesta</button>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:baseline;gap:5px;margin-bottom:14px;line-height:1"><span style="font-family:'Outfit',sans-serif;font-size:10px;font-weight:400;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5)">Studio</span><span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:1px">LD</span></div>
+      <p class="footer-desc" style="color:rgba(255,255,255,.5);font-size:13px">Studio Diella — Consulente del Lavoro.<br>Gestione strutturata del personale per imprese italiane e gruppi esteri operanti in Italia.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Sedi</h4>
+      <ul>
+        <li><a href="#">Desio (MB) — Via G. Garibaldi 6/A</a></li>
+        <li><a href="#">Milano — Via Vitruvio 43</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Seguici</h4>
+      <ul class="footer-social" style="margin-top:4px">
+        <li><a href="https://www.instagram.com/leonardodiella_cdl" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/leonardo-diella" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+        <li><a href="https://www.facebook.com/LeonardoDiella.Cdl/" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Servizi</h4>
+      <ul>
+        <li><a href="#servizi">Amministrazione del personale</a></li>
+        <li><a href="#servizi">Consulenza giuslavoristica</a></li>
+        <li><a href="#servizi">Contrattualistica</a></li>
+        <li><a href="#servizi">Welfare aziendale</a></li>
+        <li><a href="#estere">Aziende estere in Italia</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Risorse</h4>
+      <ul>
+        <li><a href="#circolari">Circolari informative</a></li>
+        <li><a href="#blog">Approfondimenti</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="https://www.consulentidellavoro.it" target="_blank" rel="noopener">Consiglio Nazionale CDL</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-ordine" style="display:flex;align-items:center;gap:16px">
+      <img src="logo-cdl.jpg" alt="Logo Ordine Consulenti del Lavoro" style="height:40px;opacity:.6;filter:invert(1)">
+      <div>Dr. Leonardo Diella — Consulente del Lavoro<br>Iscritto all'Ordine della Provincia di Monza e della Brianza · Abilitato ai sensi della L. 11 gennaio 1979, n. 12</div>
+    </div>
+    <div>© 2026 Studio Diella</div>
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <ul style="display:flex;gap:20px;list-style:none">
+        <li><a href="privacy.html" style="color:rgba(255,255,255,.45);font-size:11px;text-decoration:none;transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Privacy Policy</a></li>
+        <li><a href="cookie.html" style="color:rgba(255,255,255,.45);font-size:11px;text-decoration:none;transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.7)'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Cookie Policy</a></li>
+      </ul>
+      <ul class="footer-social">
+        <li><a href="https://www.instagram.com/leonardodiella_cdl" target="_blank" rel="noopener" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/leonardo-diella" target="_blank" rel="noopener" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+        <li><a href="https://www.facebook.com/LeonardoDiella.Cdl/" target="_blank" rel="noopener" title="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ── NAV ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+
+/* ── HAMBURGER ── */
+const btn = document.getElementById('hamburger');
+const menu = document.getElementById('mobileMenu');
+btn.addEventListener('click', () => {
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+});
+function closeMobile(){ btn.classList.remove('open'); menu.classList.remove('open'); }
+
+/* ── REVEAL ── */
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.hero .reveal, .numeri .reveal').forEach((el,i) => setTimeout(() => el.classList.add('visible'), 180 + i*130));
+
+/* ── NAV ACTIVE SECTION ── */
+(function(){
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  function setActive(){
+    var scrollY = window.scrollY + 120;
+    var current = '';
+    sections.forEach(function(s){
+      if(scrollY >= s.offsetTop) current = s.getAttribute('id');
+    });
+    navLinks.forEach(function(a){
+      a.classList.remove('active');
+      var href = a.getAttribute('href');
+      if(href && href.indexOf('#') !== -1){
+        var anchor = href.split('#')[1];
+        if(anchor === current) a.classList.add('active');
+      }
+    });
+  }
+  window.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+})();
+
+/* ── FILTRI CIRCOLARI ── */
+function filtraCirc(cat, btn) {
+  document.querySelectorAll('.circ-filtro').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.circ-card').forEach(card => {
+    card.style.display = (cat === 'tutti' || card.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+/* ── FORM ── */
+function handleForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  const msg  = document.getElementById('formMsg');
+  const data = new FormData(form);
+
+  fetch('/', {
+    method: 'POST',
+    body: new URLSearchParams(data).toString(),
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+  }).then(r => {
+    if (r.ok) {
+      msg.className = 'form-msg ok';
+      msg.textContent = 'Richiesta inviata correttamente. La ricontatteremo entro il prossimo giorno lavorativo.';
+      form.reset();
+    } else {
+      msg.className = 'form-msg err';
+      msg.textContent = 'Errore nell\'invio. La preghiamo di contattarci direttamente a info@studiodiella.it';
+    }
+  }).catch(() => {
+    msg.className = 'form-msg err';
+    msg.textContent = 'Errore di rete. La preghiamo di contattarci a info@studiodiella.it';
+  });
+}
+
+// ── MODAL AREE DI INTERVENTO ───────────────────────
+var areeData = {
+  amm: {
+    label: 'Amministrazione del personale',
+    titolo: 'Amministrazione del personale',
+    intro: 'La gestione amministrativa del personale è il cuore operativo dello Studio. Ogni azienda cliente può contare su un interlocutore unico che segue l\'intero ciclo vita del rapporto di lavoro: dall\'assunzione al cedolino mensile, fino alla gestione delle cessazioni e agli adempimenti annuali.',
+    blocchi: [
+      {
+        titolo: 'Elaborazione paghe e cedolini',
+        voci: [
+          'Elaborazione mensile dei cedolini paghe per dipendenti e collaboratori',
+          'Calcolo delle competenze fisse e variabili: straordinari, indennità, premi, trattenute',
+          'Gestione delle variazioni mensili: assunzioni, cessazioni, trasformazioni, variazioni orario',
+          'Conguagli fiscali di fine anno e cedolini integrativi',
+          'Prospetti di costo del lavoro per centro di costo o commessa',
+        ]
+      },
+      {
+        titolo: 'Libro Unico del Lavoro e documentazione obbligatoria',
+        voci: [
+          'Tenuta e conservazione del LUL con aggiornamento mensile',
+          'Gestione del registro presenze e delle timbrature',
+          'Redazione e archiviazione dei contratti individuali di lavoro',
+          'Comunicazioni obbligatorie di assunzione, proroga, trasformazione e cessazione (COB/SAP)',
+          'Gestione delle lettere di assunzione, patti di prova, clausole specifiche',
+        ]
+      },
+      {
+        titolo: 'Adempimenti contributivi e fiscali',
+        voci: [
+          'Predisposizione e invio telematico delle denunce UNIEMENS mensili all\'INPS',
+          'Compilazione e verifica F24 mensile (contributi e ritenute fiscali)',
+          'Autoliquidazione INAIL annuale: calcolo del premio, verifica delle voci di rischio',
+          'Dichiarazione dei sostituti d\'imposta (modello 770)',
+          'Certificazioni Uniche (CU) per dipendenti e collaboratori',
+          'Comunicazioni INPS per ANF, malattie, maternità, CIG',
+        ]
+      },
+      {
+        titolo: 'Reportistica e controllo di gestione del costo lavoro',
+        voci: [
+          'Report mensile di costo del lavoro per azienda o per unità organizzativa',
+          'Analisi degli scostamenti rispetto al budget',
+          'Proiezioni annuali del costo del personale',
+          'Reportistica dedicata per gruppi societari o holding con più unità produttive',
+        ]
+      }
+    ],
+    rif: 'D.Lgs. 276/2003 · D.Lgs. 151/2015 · D.P.R. 322/1998 · Circ. Min. Lavoro n. 4/2008 (LUL)'
+  },
+  gius: {
+    label: 'Consulenza giuslavoristica',
+    titolo: 'Consulenza giuslavoristica',
+    intro: 'Il supporto giuslavoristico va oltre la corretta tenuta delle buste paga. Significa essere presenti quando l\'azienda si trova di fronte a scelte che hanno conseguenze legali, contributive e relazionali: dalla corretta classificazione di un rapporto di lavoro alla gestione di un\'ispezione, fino alla rappresentanza nelle sedi di conciliazione.',
+    blocchi: [
+      {
+        titolo: 'Rapporti con gli enti previdenziali e ispettivi',
+        voci: [
+          'Assistenza nei confronti dell\'Ispettorato Territoriale del Lavoro (ITL) in sede di verifica',
+          'Redazione di memorie difensive a verbali di ispezione',
+          'Gestione delle diffide accertative e delle contestazioni amministrative',
+          'Rapporti con INPS e INAIL per verifiche, regolarizzazioni e ricorsi',
+          'Accesso agli atti e gestione del contraddittorio',
+        ]
+      },
+      {
+        titolo: 'Classificazione dei rapporti di lavoro',
+        voci: [
+          'Analisi della genuinità dei rapporti di lavoro autonomo, parasubordinato e a progetto',
+          'Pareri sulla corretta qualificazione tra subordinazione e autonomia',
+          'Gestione dei rischi legati alla collaborazione occasionale e alle co.co.co.',
+          'Valutazione delle fattispecie di distacco, appalto e interposizione illecita',
+          'Verifica della congruità contributiva nei contratti di appalto',
+        ]
+      },
+      {
+        titolo: 'Contrattazione collettiva e relazioni sindacali',
+        voci: [
+          'Interpretazione e corretta applicazione dei CCNL di riferimento',
+          'Supporto nella gestione dei rapporti con RSA e RSU',
+          'Assistenza nella stipula di accordi integrativi aziendali',
+          'Gestione delle procedure di informazione e consultazione sindacale',
+          'Pareri su accordi di secondo livello e contrattazione di prossimità',
+        ]
+      },
+      {
+        titolo: 'Agevolazioni contributive e incentivi all\'assunzione',
+        voci: [
+          'Individuazione e applicazione degli incentivi INPS vigenti (giovani, donne, disoccupati, ZES)',
+          'Esonero contributivo ex L. 92/2012 e successive modifiche: requisiti e monitoraggio',
+          'Incentivo per assunzioni under 36 e over 50 in regime agevolato',
+          'Gestione del cumulo tra incentivi e verifica delle condizioni ostative',
+          'Comunicazioni preventive all\'INPS e rendicontazione degli esoneri fruiti',
+          'Agevolazioni per contratti di apprendistato: aliquote ridotte e benefici fiscali',
+        ]
+      },
+      {
+        titolo: 'DURC e DURF — verifica, regolarizzazione e gestione',
+        voci: [
+          'Verifica della regolarità contributiva (DURC) per appalti, gare e finanziamenti pubblici',
+          'Analisi delle cause di irregolarità DURC e piano di regolarizzazione',
+          'Gestione del DURC in scadenza nei cantieri e negli appalti in corso',
+          'Documento Unico di Regolarità Fiscale (DURF): verifica dei requisiti ex art. 17-bis D.Lgs. 241/1997',
+          'Assistenza nella sospensione dei versamenti in attesa di DURC regolare',
+          'Coordinamento con il consulente fiscale per le responsabilità solidali negli appalti',
+        ]
+      },
+      {
+        titolo: 'Conciliazione e contenzioso stragiudiziale',
+        voci: [
+          'Assistenza nelle sedi di conciliazione ex art. 410 c.p.c. (DTL)',
+          'Redazione di accordi di conciliazione e verbali di accordo sindacale',
+          'Supporto nelle procedure di mediazione obbligatoria',
+          'Coordinamento con avvocati giuslavoristi per il contenzioso giudiziale',
+        ]
+      }
+    ],
+    rif: 'D.Lgs. 124/2004 (ispezioni) · L. 12/1979 (CDL) · D.Lgs. 81/2015 · Art. 410 c.p.c. · Art. 17-bis D.Lgs. 241/1997 (DURF)'
+  },
+  contr: {
+    label: 'Contrattualistica e inquadramento',
+    titolo: 'Contrattualistica e inquadramento',
+    intro: 'Un contratto mal redatto o un inquadramento errato possono generare costi nascosti, contenzioso e irregolarità contributive. Lo Studio assiste le aziende nella progettazione della struttura contrattuale più adeguata al loro modello organizzativo, con piena padronanza dei CCNL di riferimento e delle loro evoluzioni.',
+    blocchi: [
+      {
+        titolo: 'Analisi e applicazione dei CCNL',
+        voci: [
+          'Identificazione del contratto collettivo applicabile in base all\'attività e al settore merceologico',
+          'Verifica della corretta applicazione dei minimi tabellari, scatti di anzianità e inquadramenti',
+          'Aggiornamento periodico in caso di rinnovo contrattuale',
+          'Analisi dei CCNL più favorevoli nell\'ambito delle possibilità legali',
+          'Gestione della pluralità di CCNL in aziende multi-settore',
+        ]
+      },
+      {
+        titolo: 'Redazione di contratti individuali',
+        voci: [
+          'Contratti a tempo indeterminato, determinato, part-time, intermittente',
+          'Contratti di apprendistato professionalizzante (art. 44 D.Lgs. 81/2015)',
+          'Contratti di somministrazione e gestione dei rapporti con l\'agenzia interinale',
+          'Patto di non concorrenza: durata, corrispettivo, perimetro geografico e merceologico',
+          'Clausole di fidelizzazione, patto di stabilità, accordi di riservatezza',
+          'Lettere di assunzione e documenti accessori (mansioni, sede, orario)',
+        ]
+      },
+      {
+        titolo: 'Contratti a termine: causali e proroghe',
+        voci: [
+          'Verifica delle causali ammissibili per contratti oltre i 12 mesi (post D.Lgs. 81/2015 e modifiche)',
+          'Gestione del limite quantitativo del 20% e delle deroghe contrattuali',
+          'Monitoraggio delle scadenze e proroghe nel rispetto dei limiti legali',
+          'Trasformazione del contratto a termine in contratto a tempo indeterminato',
+          'Gestione dell\'intervallo obbligatorio tra contratti successivi (stop and go)',
+        ]
+      },
+      {
+        titolo: 'Inquadramento e categorie contrattuali',
+        voci: [
+          'Verifica dell\'inquadramento di ogni lavoratore secondo i profili del CCNL',
+          'Gestione delle promozioni, avanzamenti di livello e cambi di mansione',
+          'Analisi delle mansioni superiori e dei diritti conseguenti (art. 2103 c.c.)',
+          'Corretta gestione del part-time verticale, misto e ciclico',
+        ]
+      }
+    ],
+    rif: 'D.Lgs. 81/2015 · Art. 2103 c.c. · L. 300/1970 (Statuto dei Lavoratori) · CCNL di settore'
+  },
+  crit: {
+    label: 'Gestione delle criticità',
+    titolo: 'Gestione delle criticità nel rapporto di lavoro',
+    intro: 'Le fasi critiche del rapporto di lavoro — un procedimento disciplinare, un licenziamento, una vertenza — richiedono competenza tecnica precisa e tempestività. Un errore procedurale può rendere invalido un atto legittimo nel merito. Lo Studio segue l\'azienda con continuità, intervenendo nelle situazioni difficili con un metodo strutturato e documentato.',
+    blocchi: [
+      {
+        titolo: 'Procedure disciplinari',
+        voci: [
+          'Redazione della lettera di contestazione disciplinare ai sensi dell\'art. 7 Stat. Lav.',
+          'Gestione dei termini di risposta e audizione del lavoratore',
+          'Irrogazione della sanzione disciplinare (richiamo, multa, sospensione, licenziamento)',
+          'Verifica della proporzionalità tra fatto contestato e sanzione applicata',
+          'Gestione dei procedimenti disciplinari a distanza (smartworking, trasferte)',
+          'Archiviazione sicura della documentazione per potenziale contenzioso',
+        ]
+      },
+      {
+        titolo: 'Gestione delle assenze',
+        voci: [
+          'Monitoraggio e gestione delle assenze per malattia (obblighi datore, visite fiscali)',
+          'Comporto per malattia: calcolo, superamento e comunicazione al lavoratore',
+          'Gestione delle assenze per infortuni sul lavoro e malattia professionale (INAIL)',
+          'Aspettativa non retribuita: condizioni, durata, effetti sul rapporto',
+          'Gestione delle assenze per cause familiari: legge 104/1992, congedi parentali, permessi',
+          'Monitoraggio delle assenze ripetute non giustificate',
+        ]
+      },
+      {
+        titolo: 'Licenziamenti individuali',
+        voci: [
+          'Licenziamento per giusta causa (art. 2119 c.c.): procedura e documentazione',
+          'Licenziamento per giustificato motivo soggettivo: iter disciplinare preliminare',
+          'Licenziamento per giustificato motivo oggettivo: comunicazione preventiva ITL (oltre 15 dip.)',
+          'Calcolo del TFR, indennità sostitutiva preavviso e competenze di fine rapporto',
+          'Gestione degli accordi di risoluzione consensuale incentivata',
+          'Dimissioni per giusta causa: procedura e obblighi del datore',
+        ]
+      },
+      {
+        titolo: 'Vertenze e conciliazione',
+        voci: [
+          'Assistenza nella gestione delle richieste di lavoro straordinario non retribuito',
+          'Gestione delle contestazioni su TFR, scatti, inquadramento',
+          'Rappresentanza nelle sedi di conciliazione sindacale e amministrativa',
+          'Redazione di accordi transattivi con rinuncia ai sensi dell\'art. 2113 c.c.',
+          'Coordinamento con lo studio legale per l\'eventuale fase giudiziale',
+        ]
+      }
+    ],
+    rif: 'Art. 7 L. 300/1970 · Art. 2119 c.c. · D.Lgs. 23/2015 (tutele crescenti) · L. 604/1966'
+  },
+  welf: {
+    label: 'Welfare e benefit aziendali',
+    titolo: 'Welfare aziendale e ottimizzazione del costo del lavoro',
+    intro: 'Il welfare aziendale non è un accessorio: è uno strumento di gestione del costo del lavoro e di fidelizzazione del personale. Lo Studio progetta piani su misura, nel pieno rispetto della normativa fiscale e contributiva, con l\'obiettivo di aumentare il potere d\'acquisto del lavoratore riducendo il costo complessivo per l\'azienda.',
+    blocchi: [
+      {
+        titolo: 'Piani welfare aziendale (art. 51 TUIR)',
+        voci: [
+          'Progettazione del piano welfare aziendale personalizzato per settore e dimensione',
+          'Verifica dei requisiti per la non imponibilità fiscale e contributiva delle somme erogate',
+          'Scelta e configurazione della piattaforma welfare (voucher, rimborsi, servizi)',
+          'Integrazione del welfare con il contratto integrativo aziendale',
+          'Comunicazione ai dipendenti e gestione delle scelte individuali',
+        ]
+      },
+      {
+        titolo: 'Fringe benefit e benefit in natura',
+        voci: [
+          'Auto aziendali: calcolo del benefit imponibile, scelta del regime fiscale',
+          'Telefoni, tablet, PC e dispositivi aziendali: soglie e regole di utilizzo misto',
+          'Abitazioni aziendali: valore convenzionale e impatto sul cedolino',
+          'Fringe benefit: soglie aggiornate (1.000€ ordinario, 2.000€ con figli a carico)',
+          'Rimborsi utenze domestiche per lavoratori in smart working',
+        ]
+      },
+      {
+        titolo: 'Premio di risultato e partecipazione agli utili',
+        voci: [
+          'Redazione dell\'accordo aziendale o territoriale per la tassazione agevolata al 5%',
+          'Definizione degli obiettivi incrementali: produttività, redditività, qualità',
+          'Monitoraggio e misurazione degli obiettivi nel corso dell\'anno',
+          'Conversione del premio in welfare: vantaggi fiscali aggiuntivi',
+          'Gestione dei limiti (soglia massima 3.000€, reddito dipendente ≤ 80.000€)',
+        ]
+      },
+      {
+        titolo: 'Previdenza complementare e fondi sanitari',
+        voci: [
+          'Destinazione del TFR ai fondi pensione complementari: gestione e comunicazioni',
+          'Contribuzione aziendale ai fondi pensione: vantaggi fiscali per l\'azienda',
+          'Casse di assistenza sanitaria contrattuale obbligatoria (Metasalute, EBAV, ecc.)',
+          'Polizze sanitarie integrative: strutturazione per evitare imponibilità',
+          'Analisi dell\'impatto su cedolino e costo del lavoro complessivo',
+        ]
+      }
+    ],
+    rif: 'Art. 51 D.P.R. 917/1986 (TUIR) · L. 208/2015 (premi di risultato) · Circ. AE 28/E/2016 · D.Lgs. 252/2005 (fondi pensione)'
+  }
+};
+
+function openArea(id) {
+  var d = areeData[id];
+  if (!d) return;
+  var html = '<div class="am-label">' + d.label + '</div>';
+  html += '<h3>' + d.titolo + '</h3>';
+  html += '<p class="am-intro">' + d.intro + '</p>';
+  d.blocchi.forEach(function(b) {
+    html += '<div class="am-blocco">';
+    html += '<div class="am-blocco-title">' + b.titolo + '</div>';
+    html += '<ul class="am-list">';
+    b.voci.forEach(function(v) { html += '<li>' + v + '</li>'; });
+    html += '</ul></div>';
+  });
+  html += '<div class="am-rif"><strong>Riferimenti normativi: </strong>' + d.rif + '</div>';
+  html += '<div class="am-cta-wrap"><a href="#contatti" class="btn-primary" onclick="closeArea()" style="display:inline-block;padding:13px 28px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:500;background:var(--navy);color:var(--bianco);text-decoration:none;border-radius:1px;transition:background .2s">Richiedi una valutazione →</a></div>';
+  document.getElementById('areaContent').innerHTML = html;
+  var overlay = document.getElementById('areaOverlay');
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('areaModal').scrollTop = 0;
+}
+
+function closeArea(e) {
+  if (e && e.target !== document.getElementById('areaOverlay')) return;
+  document.getElementById('areaOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeArea();
+});
+
+</script>
+</body>
+</html>
